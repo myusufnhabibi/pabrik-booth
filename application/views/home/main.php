@@ -2,7 +2,7 @@
 
     <section class="section custom-section-background position-relative border-0 overflow-hidden m-0 p-0">
         <div class="position-absolute top-0 left-0 right-0 bottom-0 animated fadeIn" style="animation-delay: 600ms;">
-            <div class="background-image-wrapper custom-background-style-1 position-absolute top-0 left-0 right-0 bottom-0 animated kenBurnsToRight" style="background-image: url(img/demos/auto-services/backgrounds/background-1.jpg); background-position: center right; animation-duration: 30s;"></div>
+            <div class="background-image-wrapper custom-background-style-1 position-absolute top-0 left-0 right-0 bottom-0 animated kenBurnsToRight" style="background-image: url(<?= base_url('assets/template/img/front/') ?>background-2.jpg);  background-position: center right; animation-duration: 30s;"></div>
         </div>
         <div class="container position-relative py-sm-5 my-5">
             <svg class="custom-svg-1 d-none d-sm-block" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 649 578">
@@ -45,22 +45,22 @@
         <div class="row align-items-center justify-content-center pb-4 mb-5">
             <div class="col-lg-6 pb-sm-4 pb-lg-0 mb-5 mb-lg-0">
                 <div class="overflow-hidden">
-                    <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">Twenty Years of Top Experience</h2>
+                    <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">Pilihan Pertama Custom Booth</h2>
                 </div>
                 <div class="custom-divider divider divider-primary divider-small my-3">
                     <hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="700">
                 </div>
-                <p class="font-weight-light text-3-5 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non. Integer aliquet ullamcorper dolor, quis sollicitudin.</p>
-                <p class="pb-1 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non. Integer aliquet ullamcorper dolor, quis sollicitudin. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non.</p>
+                <p class="font-weight-light text-3-5 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">Dari segi Harganya sangat terjangkau, lebih murah dari gerobak/booth kayu. Bahkan banyak yang harganya di bawah 5 Juta dan anda sudah mendapatkan gerobak jualan produk kuliner yang cantik, keren, eye catching,desain unik dan kekinian,tidak perlu ijin mendirikan bangunan, serta daya tahannya yang bisa diandalkan.</p>
+                <p class="pb-1 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Kami siap kirim ke seluruh Indonesia, Karena gerobak ala kontainer ini bisa dibongkar pasang, tentunya ongkos kirimnya menjadi jauh lebih ekonomis.</p>
                 <div class="d-flex align-items-start align-items-sm-center flex-column flex-sm-row">
-                    <a href="demo-auto-services-about-us.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">VIEW MORE</a>
+                    <a href="demo-auto-services-about-us.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 px-5 btn-py-3 me-sm-2 mb-3 mb-sm-0 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="950">SELENGKAPNYA</a>
                     <div class="feature-box align-items-center border border-top-0 border-end-0 border-bottom-0 custom-remove-mobile-xs-border-left ms-sm-4 ps-sm-4 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1200">
                         <div class="feature-box-icon bg-transparent">
                             <i class="icons icon-phone text-6 text-color-dark"></i>
                         </div>
                         <div class="feature-box-info line-height-2 ps-1">
-                            <span class="d-block text-1 font-weight-semibold text-color-default">CALL US NOW</span>
-                            <strong class="text-4-5"><a href="tel:+1234567890" class="text-color-dark text-color-hover-primary text-decoration-none">+123 4567 890</a></strong>
+                            <span class="d-block text-1 font-weight-semibold text-color-default">HUBUNGI KAMI</span>
+                            <strong class="text-4-5"><a href="https://wa.me/6281228258787" target="_blank" class="text-color-dark text-color-hover-primary text-decoration-none">6281 2282 58787</a></strong>
                         </div>
                     </div>
                 </div>
@@ -68,64 +68,75 @@
             <div class="col-10 col-md-9 col-lg-6 ps-lg-5 pe-5 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1450" data-plugin-options="{'accY': -200}">
                 <div class="position-relative">
                     <div data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 0.2, 'transition': true, 'transitionDuration': 1000, 'isInsideSVG': true}">
-                        <img src="img/demos/auto-services/generic-1.png" class="img-fluid" alt="" />
+                        <img style="max-width: 95% !important" src="<?= base_url('assets/template/img/front/')?>/generic-1.png" class="img-fluid" alt="" />
                     </div>
                     <div class="position-absolute transform3dxy-n50" style="top: 25%; left: 7%;">
                         <div data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 0.5, 'transition': true, 'transitionDuration': 2000, 'isInsideSVG': false}">
-                            <img src="img/demos/auto-services/generic-1-1.png" class="appear-animation" alt="" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1700" />
+                            <img src="<?= base_url('assets/template/img/front/')?>/generic-1-1.png" class="appear-animation" alt="" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1700" />
                         </div>
                     </div>
                     <div class="position-absolute transform3dxy-n50 ms-5 pb-5 ms-xl-0" style="top: 32%; left: 85%;">
                         <div data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 1, 'transition': true, 'transitionDuration': 1500, 'isInsideSVG': false}">
-                            <img src="img/demos/auto-services/generic-1-2.png" class="appear-animation" alt="" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1900" />
+                            <img src="<?= base_url('assets/template/img/front/')?>/generic-1-2.png" class="appear-animation" alt="" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="1900" />
                         </div>
                     </div>
                     <div class="position-absolute transform3dxy-n50" style="top: 90%; left: 19%;">
                         <div data-plugin-float-element data-plugin-options="{'startPos': 'top', 'speed': 2, 'transition': true, 'transitionDuration': 2500, 'isInsideSVG': false}">
-                            <img src="img/demos/auto-services/generic-1-3.png" class="appear-animation" alt="" data-appear-animation="fadeInDownShorterPlus" data-appear-animation-delay="2100" />
+                            <img src="<?= base_url('assets/template/img/front/')?>/generic-1-3.png" class="appear-animation" alt="" data-appear-animation="fadeInDownShorterPlus" data-appear-animation-delay="2100" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row pb-2">
-            <div class="col-lg-4 text-center px-lg-5 mb-5 mb-lg-0">
+            <div class="col-lg-3 text-center px-lg-5 mb-5 mb-lg-0">
                 <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
                     <div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="250" data-plugin-options="{'accY': -200}">
                         <div class="custom-icon-style-1 mb-4">
-                            <img width="50" src="img/demos/auto-services/icons/checklist.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                            <img width="50" src="<?= base_url('assets/template/img/icons/') ?>/graphic-design.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
                         </div>
-                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-3 px-xl-5 my-2">Complete Auto Body and Paint Shop</h3>
-                        <p>Lorem ipsum dolor sit a met, consectetur adipiscing elit.</p>
+                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 my-2">Desain Booth dan Ukuran</h3>
+                        <p>Desain dan ukuran booth ala kontainer ini bisa menyesuaikan kebutuhan anda.</p>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 text-center px-lg-5 mb-5 mb-lg-0">
+            <div class="col-lg-3 text-center px-lg-5 mb-5 mb-lg-0">
                 <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
                     <div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'accY': -200}">
                         <div class="custom-icon-style-1 mb-4">
-                            <img width="50" src="img/demos/auto-services/icons/wheel-disk.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                            <img width="50" src="<?= base_url('assets/template/img/icons/') ?>/roll-paint-brush.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
                         </div>
-                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-xl-5 my-2 mx-4">Free Diagnosis & Brake Checks</h3>
-                        <p>Lorem ipsum dolor sit a met, consectetur adipiscing elit.</p>
+                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-4 my-2">Bahan dan Cat Booth</h3>
+                        <p>Bahan besi dan galvalum anti karat yang dicat DUCO menjadikannya lebih awet dan tahan terhadap cuaca.</p>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 text-center px-lg-5">
+            <div class="col-lg-3 text-center px-lg-5">
                 <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
                     <div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="750" data-plugin-options="{'accY': -200}">
                         <div class="custom-icon-style-1 mb-4">
-                            <img width="50" src="img/demos/auto-services/icons/car-safe.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                            <img width="50" src="<?= base_url('assets/template/img/icons/') ?>/tea-cup.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
                         </div>
-                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-4 px-xl-5 my-2">Car Mechanics You Can Trust</h3>
-                        <p>Lorem ipsum dolor sit a met, consectetur adipiscing elit.</p>
+                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 my-2">Cocok Untuk Bisnis Kuliner</h3>
+                        <p>Dengan booth semi kontainer yang eyecathing menjadikan bisnis makanan dan minuman anda menjadi elegan.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 text-center px-lg-5">
+                <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                    <div class="custom-icon-box-style-1 appear-animation" data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="750" data-plugin-options="{'accY': -200}">
+                        <div class="custom-icon-style-1 mb-4">
+                            <img width="50" src="<?= base_url('assets/template/img/icons/') ?>/free-delivery.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" />
+                        </div>
+                        <h3 class="text-transform-none font-weight-bold text-color-dark line-height-3 text-4-5 px-4 px-xl-5 my-2">GRATIS Desain Logo</h3>
+                        <p>Pembuatan logo yang sesuai dengan BRAND anda, mempertimbangkan aspek filosofi dan fengshui keberuntungan.</p>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 
-    <section class="section custom-bg-color-grey-1 custom-background-size-1 position-relative overflow-hidden border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '130%', 'fadeIn': true}" data-image-src="img/demos/auto-services/backgrounds/background-2.jpg">
+    <!-- <section class="section custom-bg-color-grey-1 custom-background-size-1 position-relative overflow-hidden border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '130%', 'fadeIn': true}" data-image-src="img/demos/auto-services/backgrounds/background-2.jpg">
         <svg class="custom-svg-background-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 537" data-appear-animation-svg="true">
             <path fill="#F4F4F4" d="M964.33,189.3L1110.08,0H0v537h1338.31L972.96,255.7C952.24,239.74,948.38,210.02,964.33,189.3z" />
             <path class="appear-animation" data-appear-animation="customLineAnim2" data-appear-animation-delay="500" data-appear-animation-duration="5s" data-plugin-options="{'accY': -400}" fill="none" stroke="#1C5FA8" stroke-width="2" stroke-miterlimit="10" d="M1854.35,105.63l-485.31-340.84c-18.3-12.85-43.56-8.44-56.42,9.86L971.79,259.96
@@ -195,9 +206,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <div class="container py-5 my-5">
+    <!-- <div class="container py-5 my-5">
         <div class="row justify-content-center">
             <div class="col-lg-9 col-xl-8 text-center">
                 <div class="overflow-hidden">
@@ -256,92 +267,15 @@
                 <a href="demo-auto-services-services.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="850">VIEW ALL SERVICES</a>
             </div>
         </div>
-    </div>
-
-    <section class="section border-0 m-0">
-        <div class="container pb-3 my-5">
-            <div class="row justify-content-center pb-3 mb-4">
-                <div class="col text-center">
-                    <h2 class="font-weight-bold text-color-dark line-height-1 mb-0">See What Clients Are Saying</h2>
-                    <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
-                        <hr class="my-0">
-                    </div>
-                    <p class="font-weight-bold text-3-5 mb-1">We are very proud of the service we provide and stand by every product we carry.</p>
-                    <p class="font-weight-light text-3-5 mb-0">Read our testimonials from our happy customers.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="owl-carousel nav-outside nav-style-1 nav-dark nav-arrows-thin nav-font-size-lg custom-carousel-box-shadow-1 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'autoplay': true, 'autoplayTimeout': 5000, 'autoplayHoverPause': true, 'dots': false, 'nav': true, 'loop': true, 'margin': 15, 'stagePadding': '75'}">
-                        <div>
-                            <div class="card custom-border-radius-1">
-                                <div class="card-body">
-                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
-                                        <blockquote>
-                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </blockquote>
-                                        <div class="testimonial-author">
-                                            <p><strong class="font-weight-extra-bold">John Smith</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card custom-border-radius-1">
-                                <div class="card-body">
-                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
-                                        <blockquote>
-                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </blockquote>
-                                        <div class="testimonial-author">
-                                            <p><strong class="font-weight-extra-bold">John Doe</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card custom-border-radius-1">
-                                <div class="card-body">
-                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
-                                        <blockquote>
-                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </blockquote>
-                                        <div class="testimonial-author">
-                                            <p><strong class="font-weight-extra-bold">John Smith</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card custom-border-radius-1">
-                                <div class="card-body">
-                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
-                                        <blockquote>
-                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </blockquote>
-                                        <div class="testimonial-author">
-                                            <p><strong class="font-weight-extra-bold">John Doe</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div> -->
 
     <section class="section section-height-3 bg-primary border-0 m-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-xl-7 text-center text-lg-start mb-4 mb-lg-0">
-                    <h2 class="text-color-light font-weight-medium text-3-5 line-height-2 line-height-sm-1 ls-0 mb-2 mb-lg-2">LOOKING FOR HONEST AND RELIABLE SERVICES?</h2>
-                    <h3 class="font-weight-bold text-color-light text-transform-none text-8 line-height-2 line-height-lg-1 mb-1">Best Mechanics Downtown Los Angeles CA</h3>
-                    <p class="font-weight-bold text-color-light text-4 opacity-7 mb-0">Make An Appointment Today With Our Online Form</p>
+                    <h2 class="text-color-light font-weight-medium text-3-5 line-height-2 line-height-sm-1 ls-0 mb-2 mb-lg-2"><?= strtoupper('Mau order gerobak dengan ukuran dan desainmu sendiri??') ?></h2>
+                    <h3 class="font-weight-bold text-color-light text-transform-none text-8 line-height-2 line-height-lg-1 mb-1">Konsultasikan Dulu Kebutuhan Anda</h3>
+                    <p class="font-weight-bold text-color-light text-4 opacity-7 mb-0">Hubungi Customer Service Kami di -></p>
                 </div>
                 <div class="col-lg-6 col-xl-5">
                     <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
@@ -350,11 +284,11 @@
                                 <i class="icons icon-phone text-6 text-color-light"></i>
                             </div>
                             <div class="feature-box-info line-height-2 ps-1">
-                                <span class="d-block text-1 font-weight-semibold text-color-light mb-1">CALL US NOW</span>
-                                <strong class="text-4-5"><a href="tel:+1234567890" class="text-color-light text-decoration-none">+123 4567 890</a></strong>
+                                <span class="d-block text-1 font-weight-semibold text-color-light mb-1">WHATSAPP</span>
+                                <strong class="text-4-5"><a href="https://wa.me/6281228258787" target="_blank" class="text-color-light text-decoration-none">6281 2282 58787</a></strong>
                             </div>
                         </div>
-                        <a href="demo-auto-services-appointment.html" class="btn btn-light btn-outline custom-btn-border-radius font-weight-bold text-color-light text-color-hover-dark bg-color-hover-light btn-px-5 btn-py-3">MAKE AN APPOINTMENT</a>
+                        <a href="https://wa.me/6281228258787" target="_blank" class="btn btn-light btn-outline custom-btn-border-radius font-weight-bold text-color-light text-color-hover-dark bg-color-hover-light btn-px-5 btn-py-3">CHAT SEKARANG</a>
                     </div>
                 </div>
             </div>
@@ -364,31 +298,19 @@
     <div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 col-md-3 px-0">
-                    <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="img/demos/auto-services/generic/generic-square-1.jpg">
-                        <img class="img-fluid rounded-0" src="img/demos/auto-services/generic/generic-square-1.jpg" alt="" />
-                    </a>
-                </div>
-                <div class="col-6 col-md-3 px-0">
-                    <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="img/demos/auto-services/generic/generic-square-2.jpg">
-                        <img class="img-fluid rounded-0" src="img/demos/auto-services/generic/generic-square-2.jpg" alt="" />
-                    </a>
-                </div>
-                <div class="col-6 col-md-3 px-0">
-                    <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="img/demos/auto-services/generic/generic-square-3.jpg">
-                        <img class="img-fluid rounded-0" src="img/demos/auto-services/generic/generic-square-3.jpg" alt="" />
-                    </a>
-                </div>
-                <div class="col-6 col-md-3 px-0">
-                    <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="img/demos/auto-services/generic/generic-square-4.jpg">
-                        <img class="img-fluid rounded-0" src="img/demos/auto-services/generic/generic-square-4.jpg" alt="" />
-                    </a>
-                </div>
+                <?php foreach($gallerys as $gallery) : ?>
+                    <div class="col-6 col-md-3 px-0">
+                        <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>">
+                            <img class="img-fluid rounded-0" src="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>" alt="" />
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 
-    <div class="container py-5 my-5">
+    <!-- FAQ -->
+    <!-- <div class="container py-5 my-5">
         <div class="row justify-content-center pb-3 mb-4">
             <div class="col-lg-9 col-xl-8 text-center">
                 <div class="overflow-hidden">
@@ -504,22 +426,23 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <section class="shop section section-height-4 border-0 m-0">
+    <section class="shop section bg-transparent section-height-4 border-0 m-0">
         <div class="container">
             <div class="row justify-content-center pb-3 mb-4">
                 <div class="col-lg-8 text-center">
                     <div class="overflow-hidden">
-                        <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Products For Sale</h2>
+                        <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Produk Booth Container</h2>
                     </div>
                     <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
                         <hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600">
                     </div>
-                    <p class="font-weight-light text-3-5 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non. Integer aliquet ullamcorper dolor, quis sollicitudin.</p>
+                    <p class="font-weight-light text-3-5 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Ini adalah beberapa contoh produk yang sudah pernah dibuat dan bisa dipesan di pabrik booth caontainer indonesia.</p>
                 </div>
             </div>
             <div class="products row row-gutter-sm mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+               <?php foreach($produks as $produk) : ?>
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="product mb-0">
                         <div class="product-thumb-info border-0 mb-3">
@@ -531,19 +454,19 @@
                                     <i class="icons icon-bag"></i>
                                 </a>
                             </div>
-                            <a href="ajax/demo-auto-services-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
-                                QUICK VIEW
+                            <a href="<?= base_url('assets/template/ajax/demo-auto-services-product-quick-view.html') ?>" class="quick-view text-uppercase font-weight-semibold text-2">
+                                LIHAT DETAIL
                             </a>
                             <a href="shop-product-sidebar-left.html">
                                 <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid" src="img/demos/auto-services/products/product-1.jpg">
+                                    <img alt="" class="img-fluid rounded" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail'])?>">
                                 </div>
                             </a>
                         </div>
                         <div class="d-flex justify-content-between">
                             <div>
                                 <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">CATEGORY</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="#" class="text-color-dark text-color-hover-primary">Product Short Name</a></h3>
+                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="#" class="text-color-dark text-color-hover-primary"><?= $produk['nama'] ?></a></h3>
                             </div>
                         </div>
                         <div title="Rated 5 out of 5">
@@ -551,119 +474,93 @@
                         </div>
                         <p class="price text-5 mb-3">
                             <span class="sale text-color-dark font-weight-medium">49,00</span>
-                            <span class="amount">59,00</span>
+                            <span class="amount"><?= 'Rp. ' . number_format($produk['harga']) ?></span>
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
-                    <div class="product mb-0">
-                        <div class="product-thumb-info border-0 mb-3">
-                            <div class="product-thumb-info-badges-wrapper">
-                                <span class="badge badge-ecommerce text-bg-danger">27% OFF</span>
-                            </div>
-                            <div class="addtocart-btn-wrapper">
-                                <a href="shop-cart.html" class="text-decoration-none addtocart-btn" title="Add to Cart">
-                                    <i class="icons icon-bag"></i>
-                                </a>
-                            </div>
-                            <a href="ajax/demo-auto-services-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
-                                QUICK VIEW
-                            </a>
-                            <a href="shop-product-sidebar-left.html">
-                                <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid" src="img/demos/auto-services/products/product-2.jpg">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">CATEGORY</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="#" class="text-color-dark text-color-hover-primary">Product Short Name</a></h3>
-                            </div>
-                        </div>
-                        <div title="Rated 5 out of 5">
-                            <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'default', 'size':'xs'}">
-                        </div>
-                        <p class="price text-5 mb-3">
-                            <span class="sale text-color-dark font-weight-medium">49,00</span>
-                            <span class="amount">59,00</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0">
-                    <div class="product mb-0">
-                        <div class="product-thumb-info border-0 mb-3">
-                            <div class="product-thumb-info-badges-wrapper">
-                                <span class="badge badge-ecommerce text-bg-danger">27% OFF</span>
-                            </div>
-                            <div class="addtocart-btn-wrapper">
-                                <a href="shop-cart.html" class="text-decoration-none addtocart-btn" title="Add to Cart">
-                                    <i class="icons icon-bag"></i>
-                                </a>
-                            </div>
-                            <a href="ajax/demo-auto-services-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
-                                QUICK VIEW
-                            </a>
-                            <a href="shop-product-sidebar-left.html">
-                                <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid" src="img/demos/auto-services/products/product-3.jpg">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">CATEGORY</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="#" class="text-color-dark text-color-hover-primary">Product Short Name</a></h3>
-                            </div>
-                        </div>
-                        <div title="Rated 5 out of 5">
-                            <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'default', 'size':'xs'}">
-                        </div>
-                        <p class="price text-5 mb-3">
-                            <span class="sale text-color-dark font-weight-medium">49,00</span>
-                            <span class="amount">59,00</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="product mb-0">
-                        <div class="product-thumb-info border-0 mb-3">
-                            <div class="product-thumb-info-badges-wrapper">
-                                <span class="badge badge-ecommerce text-bg-danger">27% OFF</span>
-                            </div>
-                            <div class="addtocart-btn-wrapper">
-                                <a href="shop-cart.html" class="text-decoration-none addtocart-btn" title="Add to Cart">
-                                    <i class="icons icon-bag"></i>
-                                </a>
-                            </div>
-                            <a href="ajax/demo-auto-services-product-quick-view.html" class="quick-view text-uppercase font-weight-semibold text-2">
-                                QUICK VIEW
-                            </a>
-                            <a href="shop-product-sidebar-left.html">
-                                <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid" src="img/demos/auto-services/products/product-4.jpg">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-1 text-0 mb-1">CATEGORY</a>
-                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0"><a href="#" class="text-color-dark text-color-hover-primary">Product Short Name</a></h3>
-                            </div>
-                        </div>
-                        <div title="Rated 5 out of 5">
-                            <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'default', 'size':'xs'}">
-                        </div>
-                        <p class="price text-5 mb-3">
-                            <span class="sale text-color-dark font-weight-medium">49,00</span>
-                            <span class="amount">59,00</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <a href="demo-auto-services-products.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">VIEW ALL PRODUCTS</a>
+                    <a href="demo-auto-services-products.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">LIHAT SEMUA PRODUK</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="section border-0 m-0">
+        <div class="container pb-3 my-5">
+            <div class="row justify-content-center pb-3 mb-4">
+                <div class="col text-center">
+                    <h2 class="font-weight-bold text-color-dark line-height-1 mb-0">Lihat Apa Kata Pelanggan</h2>
+                    <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
+                        <hr class="my-0">
+                    </div>
+                    <p class="font-weight-bold text-3-5 mb-1">Kami sangat bangga dengan layanan yang kami berikan dan mendukung setiap produk yang kami buat.</p>
+                    <p class="font-weight-light text-3-5 mb-0">Baca testimonial kami dari pelanggan kami yang puas.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="owl-carousel nav-outside nav-style-1 nav-dark nav-arrows-thin nav-font-size-lg custom-carousel-box-shadow-1 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 2}, '1199': {'items': 3}}, 'autoplay': true, 'autoplayTimeout': 5000, 'autoplayHoverPause': true, 'dots': false, 'nav': true, 'loop': true, 'margin': 15, 'stagePadding': '75'}">
+                        <div>
+                            <div class="card custom-border-radius-1">
+                                <div class="card-body">
+                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
+                                        <blockquote>
+                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong class="font-weight-extra-bold">John Smith</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card custom-border-radius-1">
+                                <div class="card-body">
+                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
+                                        <blockquote>
+                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong class="font-weight-extra-bold">John Doe</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card custom-border-radius-1">
+                                <div class="card-body">
+                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
+                                        <blockquote>
+                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong class="font-weight-extra-bold">John Smith</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card custom-border-radius-1">
+                                <div class="card-body">
+                                    <div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote text-center mb-0">
+                                        <blockquote>
+                                            <p class="text-color-dark text-3 font-weight-light px-0 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </blockquote>
+                                        <div class="testimonial-author">
+                                            <p><strong class="font-weight-extra-bold">John Doe</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

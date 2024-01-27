@@ -23,7 +23,8 @@ class home extends CI_Controller
     public function index()
 
     {
-        // $data['gallerys'] = $this->Home_model->get('tbl_galery', null, null, null, null, null, '0', '8')->result_array();
+        $data['gallerys'] = $this->Home_model->get('pb_gallery', null, null, null, null, null, '0', '4')->result_array();
+        $data['produks'] = $this->Home_model->get('pb_produk', null, null, null, null, null, '0', '8')->result_array();
         // $data['ketua'] = $this->Home_model->get_kontak('Ketua KLB')->row_array();
         // $data['jumlah_galery'] = $this->Home_model->get('tbl_galery')->num_rows();
         // $data['admin'] = $this->Home_model->get_kontak('Admin KLB')->row_array();
@@ -33,7 +34,7 @@ class home extends CI_Controller
         // $data['kegiatan_utama'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '0', '1')->row_array();
         // $data['kegiatan_lanjutan'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '1', '3')->result_array();
 
-        $this->template->load('template_fe', 'home/main');
+        $this->template->load('template_fe', 'home/main', $data);
 
     }
 
