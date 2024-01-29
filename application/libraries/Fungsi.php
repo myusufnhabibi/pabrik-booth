@@ -29,4 +29,11 @@ class Fungsi
         }
     }
 
+    function setting_app() {
+        $ci = get_instance();
+        $query = "SELECT * from pb_setting";
+        $ambil = $ci->db->query($query)->row();
+        return $ambil;
+    }
+
 }

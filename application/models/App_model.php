@@ -64,25 +64,26 @@ class App_model extends CI_Model
         $this->db->update('tbl_qna', $param);
     }
 
-    public function kontak_tambah($post)
+    public function setting_ubah($post)
     {
         $param = [
-            'nama_kontak' => ucfirst($post['nama']),
-            'nomer_kontak' => $post['nomer'],
-            'jabatan' => $post['jabatan']
+            'nama' => $post['nama'],
+            'nomer' => $post['nomer'],
+            'fb' => $post['fb'],
+            'ig' => $post['ig'],
+            'tt' => $post['tiktok'],
         ];
-        $this->db->insert('tbl_kontak', $param);
-    }
-
-    public function kontak_ubah($post)
-    {
-        $param = [
-            'nama_kontak' => ucfirst($post['nama']),
-            'nomer_kontak' => $post['nomer'],
-            'jabatan' => $post['jabatan']
-        ];
-        $this->db->where('kontak_id', $post['id']);
-        $this->db->update('tbl_kontak', $param);
+        if (!empty($_FILES['image']['name'])) {
+            $row = $this->get('pb_setting', $post['setting_id'], 'id')->row_array();
+            if ($row['logo'] != '' || $row['logo'] != null) {
+                unlink(FCPATH . 'assets/gambar/' . $row['logo']);
+            }
+            $param['logo'] = $this->uploadImage('image', 'assets/gambar');
+        } else {
+            $param['logo'] = $post['lama'];
+        }
+        $this->db->where('id', $post['setting_id']);
+        $this->db->update('pb_setting', $param);
     }
 
     function get_gallery($number, $offset)
@@ -90,7 +91,12 @@ class App_model extends CI_Model
         return $this->db->get('pb_gallery', $number, $offset);
     }
 
-    public function upload($post)
+    function get_testimoni($number, $offset)
+    {
+        return $this->db->get('pb_testimoni', $number, $offset);
+    }
+
+    public function upload_gallery($post)
     {
         $param = [
             'foto' => $post,
@@ -99,7 +105,16 @@ class App_model extends CI_Model
         $this->db->insert('pb_gallery', $param);
     }
 
-    public function upload2($post, $id)
+    public function upload_testimoni($post)
+    {
+        $param = [
+            'testimoni' => $post,
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+        $this->db->insert('pb_testimoni', $param);
+    }
+
+    public function upload_produk($post, $id)
     {
         $param = [
             'foto' => $post,
@@ -138,7 +153,7 @@ class App_model extends CI_Model
             if ($row['thumbnail'] != '' || $row['thumbnail'] != null) {
                 unlink(FCPATH . 'assets/gambar/thumbnail/' . $row['thumbnail']);
             }
-            $param['thumbnail'] = $this->uploadImage('image');
+            $param['thumbnail'] = $this->uploadImage('image', 'assets/gambar/thumbnail');
         } else {
             $param['thumbnail'] = $post['lama'];
         }
@@ -153,9 +168,9 @@ class App_model extends CI_Model
         $this->db->update('pb_produk', $param);
     }
 
-    private function uploadImage($param)
+    private function uploadImage($param, $lokasi)
     {
-        $config['upload_path'] = realpath(FCPATH . 'assets/gambar/thumbnail');
+        $config['upload_path'] = realpath(FCPATH . $lokasi);
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size']     = '1048';
         $config['file_name']  = round(microtime(true) * 1000);

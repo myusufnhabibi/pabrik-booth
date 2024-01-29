@@ -2,8 +2,9 @@
 	Dropzone.autoProcessQueue = false; //setting dropzone agar tidak ototmatis upload file
 	Dropzone.autoDiscover = false; //setting dropzone agar tidak ototmatis upload file
 	var baseurl = 'http://localhost/pabrik-booth/app/';
-	if ($('#frmdropzone').length) {
-		var myDropzone = new Dropzone('#frmdropzone', {
+
+	if ($('#frmGallery').length) {
+		var myDropzone = new Dropzone('#frmGallery', {
 			url: baseurl + 'upload',
 			autoProcessQueue: false,
 			parallelUploads: 5, //maksimal jumlah upload
@@ -16,6 +17,10 @@
 				this.on("uploadprogress", function (file, progress) {
 					console.log("File progress", progress);
 				});
+				this.on("sending", function (file, xhr, formData) {
+					var str = $('#param').val();
+					formData.append("param", str);
+				});
 				this.on("complete", function (file) {
 					//pesan jika upload success
 				});
@@ -23,9 +28,36 @@
 			},
 		});
 	}
+
+	if ($('#frmTestimoni').length) {
+		var myDropzone = new Dropzone('#frmTestimoni', {
+			url: baseurl + 'upload',
+			autoProcessQueue: false,
+			parallelUploads: 5, //maksimal jumlah upload
+			uploadMultiple: false,
+			maxFilesize: 1, //ukuran file 2MB
+			addRemoveLinks: true,
+			acceptedFiles: 'image/jpeg,image/png,image/jpg',
+			init: function () {
+				thisDropzone = this;
+				this.on("uploadprogress", function (file, progress) {
+					console.log("File progress", progress);
+				});
+				this.on("sending", function (file, xhr, formData) {
+					var str = $('#param').val();
+					formData.append("param", str);
+				});
+				this.on("complete", function (file) {
+					//pesan jika upload success
+				});
+
+			},
+		});
+	}
+
 	if ($('#frmproduk').length) {
 		var kegiatanDropzone = new Dropzone('#frmproduk', {
-			url: baseurl + 'upload2',
+			url: baseurl + 'upload',
 			autoProcessQueue: false,
 			parallelUploads: 5, //maksimal jumlah upload
 			uploadMultiple: false,
@@ -39,6 +71,8 @@
 				});
 				this.on("sending", function (file, xhr, formData) {
 					var str = $('#produk_id3').val();
+					var param = $('#param').val();
+					formData.append("param", param);
 					formData.append("produk_id", str);
 				});
 				this.on("complete", function (file) {
@@ -49,13 +83,24 @@
 		});
 	}
 
-	$("#btnsubmit").on("click", function (e) {
+	$("#btnGallery").on("click", function (e) {
 		//fungsi untuk mengupload gambar ke database
 		if (myDropzone.getQueuedFiles().length > 0) {
 			myDropzone.processQueue();
-			$('#frmdropzone').submit();
+			$('#frmGallery').submit();
 			alert('Gambar telah di upload');
 			window.location.href = baseurl + 'gallery';
+			return false;
+		}
+	});
+
+	$("#btnTestimoni").on("click", function (e) {
+		//fungsi untuk mengupload gambar ke database
+		if (myDropzone.getQueuedFiles().length > 0) {
+			myDropzone.processQueue();
+			$('#frmTestimoni').submit();
+			alert('Gambar telah di upload');
+			// window.location.href = baseurl + 'testimoni';
 			return false;
 		}
 	});

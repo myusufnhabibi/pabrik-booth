@@ -73,65 +73,38 @@ class app extends CI_Controller
         redirect('app/qna');
     }
 
-    public function kontak()
+    public function setting()
     {
-        $data['title'] = "Kontak";
-        $data['kontaks'] = $this->App_model->get('tbl_kontak')->result_array();
-        $this->template->load('template', 'app/kontak', $data);
+        $data['title'] = "Setting";
+        $data['setting'] = $this->App_model->get('pb_setting', 'PBCI9', 'id')->row_array();
+        $this->template->load('template', 'app/setting', $data);
     }
 
-    public function akontak()
+    public function asetting()
     {
         $param = $this->uri->segment(3);
         if ($param) {
-            $cek = $this->App_model->get('tbl_kontak', $param, 'kontak_id')->num_rows();
+            $cek = $this->App_model->get('pb_setting', $param, 'setting_id')->num_rows();
             if ($cek > 0) {
-                $data['title'] = "Ubah Kontak";
-                $data['kontak'] = $this->App_model->get('tbl_kontak', $param, 'kontak_id')->row_array();
+                $data['title'] = "Ubah setting";
+                $data['setting'] = $this->App_model->get('pb_setting', $param, 'setting_id')->row_array();
             } else {
-                redirect('app/kontak');
+                redirect('app/setting');
             }
         } else {
-            $data['title'] = "Tambah Kontak";
+            $data['title'] = "Tambah setting";
         }
-        $this->template->load('template', 'app/akontak', $data);
+        $this->template->load('template', 'app/asetting', $data);
     }
 
-    public function kontak_tambah()
+    public function setting_ubah()
     {
         $post = $this->input->post(null, true);
-	$level = $this->input->post('jabatan', true);
-	$cek = $this->App_model->get('tbl_kontak', $level, 'jabatan')->num_rows();	
-	if ($cek > 0) {
-		$this->session->set_flashdata('gagal', 'Jabatan tersebut sudah ada, tinggal diubah saja!');
-            redirect('app/kontak');
-	}
-        else {
-		$this->App_model->kontak_tambah($post);
-	    if ($this->db->affected_rows() == 1) {
-            	$this->session->set_flashdata('berhasil', 'Data kontak Berhasil ditambahkan');
-            	redirect('app/kontak');
-	    }
-        }
-    }
-
-    public function kontak_ubah()
-    {
-        $post = $this->input->post(null, true);
-        $this->App_model->kontak_ubah($post);
+        $this->App_model->setting_ubah($post);
         if ($this->db->affected_rows() == 1) {
-            $this->session->set_flashdata('berhasil', 'Data kontak Berhasil diubah');
-            redirect('app/kontak');
+            $this->session->set_flashdata('berhasil', 'Data setting Berhasil Diupdate');
+            redirect('app/setting');
         }
-    }
-
-    public function del_kontak($id)
-    {
-        // $id = $this->uri->segment(4);
-        $this->db->where('kontak_id', $id);
-        $this->db->delete('tbl_kontak');
-        $this->session->set_flashdata('berhasil', 'Data kontak Berhasil dihapus');
-        redirect('app/kontak');
     }
 
     public function gallery()
@@ -150,10 +123,32 @@ class app extends CI_Controller
         $this->template->load('template', 'app/gallery', $data);
     }
 
+    public function testimoni()
+    {
+        $data['title'] = "Testimoni";
+        $data['use'] = true;
+        $this->load->library('pagination');
+        $config['base_url'] = base_url('app/testimoni');
+        $config['total_rows'] = $this->App_model->get('pb_testimoni')->num_rows();
+        $config['per_page'] = 8;
+        $config['attributes'] = array('class' => 'page-link');
+        $this->pagination->initialize($config);
+        $from = $this->uri->segment(3);
+        $data['testimonis'] = $this->App_model->get_testimoni($config['per_page'], $from)->result_array();
+        $data['cek'] = $this->App_model->get_testimoni($config['per_page'], $from)->num_rows();
+        $this->template->load('template', 'app/testimoni', $data);
+    }
+
     public function upload()
     {
-        $ds          = DIRECTORY_SEPARATOR; //fungsinya untuk membuat garis /
-        $storeFolder = realpath(FCPATH . 'assets/gambar/gallery/');
+        $ds          = DIRECTORY_SEPARATOR;
+        if ($_POST['param'] == 'gallery') {
+            $storeFolder = realpath(FCPATH . 'assets/gambar/gallery/');
+        } else if ($_POST['param'] == 'testimoni') {
+            $storeFolder = realpath(FCPATH . 'assets/gambar/testimoni/');
+        } else if ($_POST['param'] == 'produk') {
+            $storeFolder = realpath(FCPATH . 'assets/gambar/produk/');
+        }
         $time = time() . "-";
 
         if (!empty($_FILES)) {
@@ -181,7 +176,14 @@ class app extends CI_Controller
                 move_uploaded_file($tempFile, $targetFile);
 
                 $image_name = $time . $_FILES['file']['name'];
-                $this->App_model->upload($image_name);
+                if ($_POST['param'] == 'gallery') {
+                    $this->App_model->upload_gallery($image_name);
+                } else if ($_POST['param'] == 'testimoni') {
+                    $this->App_model->upload_testimoni($image_name);
+                }  else if ($_POST['param'] == 'produk') {
+                    $id = $_POST['produk_id'];
+                    $this->App_model->upload_produk($image_name, $id);
+                }
 
                 $result = array('status' => 'sucesss');
                 header('Content-type: text/json');
@@ -211,6 +213,17 @@ class app extends CI_Controller
         // unlink($lokasi);
         $this->session->set_flashdata('berhasil', 'Data Gallery Berhasil dihapus ');
         redirect('app/gallery');
+    }
+
+    public function del_testimoni($id)
+    {
+        $row = $this->App_model->get('pb_testimoni', $id, 'id')->row_array();
+        $this->db->where('id', $id);
+        $this->db->delete('pb_testimoni');
+        unlink(realpath(FCPATH . 'assets/gambar/testimoni/' . $row['testimoni']));
+        // unlink($lokasi);
+        $this->session->set_flashdata('berhasil', 'Data Testimoni Berhasil dihapus ');
+        redirect('app/testimoni');
     }
 
     public function produk()
@@ -336,58 +349,6 @@ class app extends CI_Controller
         redirect('app/produk');
     }
 
-    public function upload2()
-    {
-        $ds          = DIRECTORY_SEPARATOR; //fungsinya untuk membuat garis /
-        $storeFolder = realpath(FCPATH . 'assets/gambar/produk/');
-        $time = time() . "-";
-
-        if (!empty($_FILES)) {
-
-            $errors     = array();
-            $maxsize    = 2097152; //2MB convert jadi byte
-            $acceptable = array(
-                'image/jpeg',
-                'image/jpg',
-                'image/png'
-            );
-
-            if (($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
-                $errors[] = 'Ukuran File terlalu Besar! ';
-            }
-
-            if (!in_array($_FILES['file']['type'], $acceptable) && (!empty($_FILES["file"]["type"]))) {
-                $errors[] = 'Ekstensi File Salah!';
-            }
-
-            if (count($errors) === 0) {
-
-                $tempFile = $_FILES['file']['tmp_name'];
-                $targetFile = $storeFolder . $ds . $time . $_FILES['file']['name'];
-                move_uploaded_file($tempFile, $targetFile);
-
-                $image_name = $time . $_FILES['file']['name'];
-                $id = $_POST['produk_id'];
-                $this->App_model->upload2($image_name, $id);
-
-                $result = array('status' => 'sucesss');
-                header('Content-type: text/json');
-                header('Content-type: application/json');
-                echo json_encode($result);
-            } else {
-                foreach ($errors as $error) {
-                    echo '<script>alert("' . $error . '");</script>';
-                }
-                die();
-            }
-        } else {
-            $result = array('status' => 'error');
-            header('Content-type: text/json');
-            header('Content-type: application/json');
-            echo json_encode($result);
-        }
-    }
-
     public function set_status($id)
     {
         $status = $this->uri->segment(4);
@@ -420,73 +381,5 @@ class app extends CI_Controller
         $data['cek'] = $this->App_model->get('pb_foto_produk', $id, 'produk_id')->num_rows();
         $data['produk'] = $this->App_model->get('pb_produk', $id, 'produk_id')->row_array();
         $this->template->load('template', 'app/dproduk', $data);
-    }
-
-    public function aaproduk()
-    {
-        $this->load->library('pagination');
-        $config['base_url'] = base_url() . 'master/produk';
-        if ($this->input->post('submit')) {
-            $keyword =  $this->input->post('keyword');
-            $this->session->set_userdata('keyword', $keyword);
-        } else if ($this->input->post('refresh')) {
-            $keyword = $this->session->unset_userdata('keyword');
-        } else {
-            $keyword = $this->session->userdata('keyword');
-        }
-
-        // $this->db->select('*');
-        $this->db->like('nama_produk', $keyword);
-        $this->db->or_like('stok', $keyword);
-        // $this->db->or_like('nama_satuan', $keyword);
-        $this->db->or_like('harga_jual', $keyword);
-        $this->db->or_like('aktif', $keyword);
-        $this->db->from('pb_produk', null, null, 'tbl_satuan', 'kode_satuan');
-        $config['total_rows'] = $this->db->count_all_results();
-        // $this->db->get('pb_produk')->num_rows();
-
-
-        $config['per_page'] = 10;
-        $this->pagination->initialize($config);
-        $data['start'] = $this->uri->segment(3);
-        $data['total_row'] = $config['total_rows'];
-        $data['title'] = 'Produk';
-        $data['produks'] = $this->App_model->get2('pb_produk', null, null, 'tbl_satuan', 'kode_satuan', $config['per_page'], $data['start'], $keyword, 'nama_produk', 'stok', 'nama_satuan', 'harga_jual', 'aktif')->result_array();
-        // var_dump($this->db->count_all_results());
-        $this->template->load('partials/template', 'produk', $data);
-    }
-
-    public function produk_gambar()
-    {
-        $this->load->library('pagination');
-        $config['base_url'] = base_url() . 'master/produk_gambar';
-        if ($this->input->post('submit')) {
-            $keyword =  $this->input->post('keyword');
-            $this->session->set_userdata('keyword', $keyword);
-        } else if ($this->input->post('refresh')) {
-            $keyword = $this->session->unset_userdata('keyword');
-        } else {
-            $keyword = $this->session->userdata('keyword');
-        }
-
-        // $this->db->select('*');
-        $this->db->like('nama_produk', $keyword);
-        $this->db->or_like('stok', $keyword);
-        // $this->db->or_like('nama_satuan', $keyword);
-        $this->db->or_like('harga_jual', $keyword);
-        $this->db->or_like('aktif', $keyword);
-        $this->db->from('pb_produk', null, null, 'tbl_satuan', 'kode_satuan');
-        $config['total_rows'] = $this->db->count_all_results();
-        // $this->db->get2('pb_produk')->num_rows();
-
-
-        $config['per_page'] = 10;
-        $this->pagination->initialize($config);
-        $data['start'] = $this->uri->segment(3);
-        $data['total_row'] = $config['total_rows'];
-        $data['title'] = 'Gambar Produk';
-        $data['produks'] = $this->App_model->get2('pb_produk', null, null, 'tbl_satuan', 'kode_satuan', $config['per_page'], $data['start'], $keyword, 'nama_produk', 'stok', 'nama_satuan', 'harga_jual', 'aktif')->result_array();
-        // var_dump($this->db->count_all_results());
-        $this->template->load('partials/template', 'produk_gambar', $data);
     }
 }

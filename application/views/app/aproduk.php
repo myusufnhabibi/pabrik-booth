@@ -140,6 +140,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <input type="hidden" value="<?= $this->fungsi->kode_otomatis('PBC'); ?>" id="produk_id3" name="produk_id" class="form-control">
+                                    <input type="hidden" value="produk" id="param" class="form-control">
                                     <input type="text" autocomplete="off" id="nama" name="nama" class="form-control">
                                 </div>
                             </div>

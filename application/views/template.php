@@ -9,7 +9,7 @@
     <meta name="description" content="<?= $title ?>">
   	<meta name="keywords" content="karya logam bersatu, klb indonesia, toko klb, toko klbi, karya logam bersatu indonesia, karya, karya logam, klb, klbi">
     <meta name="author" content="">
-    <title><?= $title ?> - Pabrik Booth Container</title>
+    <title><?= $title ?> - <?= $this->fungsi->setting_app()->nama ?></title>
     <link rel="shortcut icon" href="<?= base_url('assets') ?>/gambar/logo1.png">
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

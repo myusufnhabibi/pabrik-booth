@@ -5,13 +5,13 @@
 
     <?php $this->view('message') ?>
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Produk</h6>
+        <div class="card-header bg-primary py-3">
+            <h6 class="m-0 font-weight-bold text-white">Data Produk</h6>
         </div>
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <a href="<?= base_url('app/aproduk') ?>" class="btn btn-primary btn-sm">Tambah Data Produk</a>
+                    <a href="<?= base_url('app/aproduk') ?>" class="btn btn-info btn-sm">Tambah Data Produk</a>
                 </div>
             </div>
             <div class="table-responsive">
