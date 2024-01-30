@@ -295,6 +295,7 @@
         </div>
     </section>
 
+    <!-- Gallery -->
     <div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
         <div class="container-fluid">
             <div class="row">
@@ -428,6 +429,7 @@
         </div>
     </div> -->
 
+    <!-- Produk -->
     <section class="shop section bg-transparent section-height-4 border-0 m-0">
         <div class="container">
             <div class="row justify-content-center pb-3 mb-4">
@@ -454,7 +456,7 @@
                                     <i class="icons icon-bag"></i>
                                 </a>
                             </div>
-                            <a href="<?= base_url('assets/template/ajax/demo-auto-services-product-quick-view.html') ?>" class="quick-view text-uppercase font-weight-semibold text-2">
+                            <a href="<?= base_url('home/produk_modal/' . $produk['produk_id']) ?>" class="quick-view text-uppercase font-weight-semibold text-2">
                                 LIHAT DETAIL
                             </a>
                             <a href="shop-product-sidebar-left.html">

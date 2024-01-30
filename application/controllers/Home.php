@@ -24,7 +24,12 @@ class home extends CI_Controller
         // $data['kegiatan_utama'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '0', '1')->row_array();
         // $data['kegiatan_lanjutan'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '1', '3')->result_array();
         $this->template->load('template_fe', 'home/main', $data);
+    }
 
+    public function produk_modal($id) {
+        $data['produk'] = $this->Home_model->get('pb_produk', $id, 'produk_id')->row_array();
+        $data['foto_produk'] = $this->Home_model->get('pb_foto_produk', $id, 'produk_id')->result_array();
+        $this->load->view('home/produk_modal', $data);
     }
 
     public function tentang_kami()

@@ -27,10 +27,10 @@
     <div class="row justify-content-md-center mb-4">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header font-16 mt-0">
+                <div class="card-header bg-primary font-16 mt-0">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h6 class="font-weight-bold text-primary"><?= $title ?></h6>
-                        <a href="<?= base_url('app/produk') ?>" class="btn btn-secondary btn-sm" style="float: right;">Kembali</a>
+                        <h6 class="font-weight-bold text-white"><?= $title ?></h6>
+                        <a href="<?= base_url('app/produk') ?>" class="btn btn-info btn-sm" style="float: right;">Kembali</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -53,7 +53,43 @@
                                     <input type="text" autocomplete="off" value="<?= $produk['harga'] ?>" id="harga" name="harga" class="form-control">
                                 </div>
                             </div>  
-
+                            <div class="row form-group">
+                                <div class="col-md-3">
+                                    <label for="">Diskon</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row g-3">
+                                        <div class="col-sm">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Type</div>
+                                                </div>
+                                                <select id="type" name="type" class="form-control utype">
+                                                    <option value="0" <?= $produk['diskon'] == '0' ? 'selected' : '' ?>>Tidak Ada Diskon</option>
+                                                    <option value="1" <?= $produk['diskon'] == '1' ? 'selected' : '' ?>>Persen</option>
+                                                    <option value="2" <?= $produk['diskon'] == '2' ? 'selected' : '' ?>>Nominal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm" id="persen-form"> 
+                                            <div class="input-group">
+                                                <input type="number" name="persen" value="<?= $produk['diskon'] == '1' ? $produk['nominal_diskon'] : '' ?>" class="form-control" id="persen">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm" id="nominal-form">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Rp</div>
+                                                </div>
+                                                <input type="number" class="form-control" value="<?=  $produk['diskon'] == '2' ? $produk['nominal_diskon'] : '' ?>" name="nominal" id="nominal" placeholder="nominal">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <?php 
                                 // $pecah = explode($produk['ukuran'], ' ');
                                 // $p = substr($pecah[0], 1);
@@ -154,6 +190,43 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col-md-3">
+                                    <label for="">Diskon</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row g-3">
+                                        <div class="col-sm">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Type</div>
+                                                </div>
+                                                <select id="type" name="type" class="form-control itype">
+                                                    <option value="0">Tidak Ada Diskon</option>
+                                                    <option value="1">Persen</option>
+                                                    <option value="2">Nominal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm" id="persen-form"> 
+                                            <div class="input-group">
+                                                <input type="number" name="persen" class="form-control" id="persen">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm" id="nominal-form">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Rp</div>
+                                                </div>
+                                                <input type="number" class="form-control" name="nominal" id="nominal" placeholder="nominal">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3">
                                     <label for="">Ukuran</label>
                                 </div>
                                 <div class="col-md-9">
@@ -248,12 +321,37 @@
 <script>
     $(document).ready(function() {
         $(".dz-hidden-input").prop("disabled", true);
-
         $("#harga").mask("000.000.000", {
                 reverse: true
             }, {
                 removeMaskOnSubmit: true
             });
+
+        $("#nominal").mask("000.000.000", {
+            reverse: true
+        }, {
+            removeMaskOnSubmit: true
+        });
+
+        $('#type').on('change', function() {
+            // if (($('#harga').val() == null) || ($('#harga').val() == '')) {
+            //     alert('Harga Diisi dulu sebelum ngisi diskon')
+            //     return 
+            // }
+
+            if ($(this).val() == '0') {
+                $('#persen-form').hide() 
+                $('#nominal-form').hide() 
+            } else if ($(this).val() == '1') {
+                $('#persen-form').show() 
+                $('#nominal-form').hide() 
+                $('#diskon').show()
+            } else {
+                $('#persen-form').hide() 
+                $('#nominal-form').show() 
+            }
+        })
+       
 
     })
 </script>

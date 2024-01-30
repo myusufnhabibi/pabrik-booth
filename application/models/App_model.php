@@ -123,13 +123,15 @@ class App_model extends CI_Model
         $this->db->insert('pb_foto_produk', $param);
     }
 
-    public function produk_tambah($id, $judul, $harga, $ukuran, $isi, $thumbnail, $status)
+    public function produk_tambah($id, $judul, $harga, $type, $nominal, $ukuran, $isi, $thumbnail, $status)
     {
         $custom_url = strtolower(str_replace(' ', '-', $judul));
         $param = [
             'produk_id' => $id,
             'nama' => $judul,
-            'harga' => $harga,
+            'harga' => $harga, 
+            'diskon' => $type, 
+            'nominal_diskon' => $nominal, 
             'ukuran' => $ukuran,
             'keterangan' => $isi,
             'thumbnail' => $thumbnail,
@@ -146,6 +148,14 @@ class App_model extends CI_Model
         $param['nama'] = ucfirst($post['judul']);
         $param['keterangan'] = html_entity_decode($post['isi']);
         $param['harga'] = str_replace('.', '', $post['harga']);
+        $param['diskon'] = $post['type'];
+        if ($post['type'] == '1') {
+            $param['nominal_diskon'] = $post['persen'];
+        } else  if ($post['type'] == '2') {
+            $param['nominal_diskon'] = str_replace('.', '', $post['nominal']);;
+        } else {
+            $param['nominal_diskon'] = 0;
+        }
         $param['ukuran'] = "P" . $post['panjang'] . " X L" . $post['lebar'] . " X T" . $post['tinggi'];
         $param['slug'] = $custom_url . '.html';
         if (!empty($_FILES['image']['name'])) {
@@ -166,6 +176,13 @@ class App_model extends CI_Model
         $param['status'] = $status;
         $this->db->where('produk_id', $id);
         $this->db->update('pb_produk', $param);
+    }
+
+    public function set_publish($id, $status, $primary, $tabel)
+    {
+        $param['status'] = $status;
+        $this->db->where($primary, $id);
+        $this->db->update($tabel, $param);
     }
 
     private function uploadImage($param, $lokasi)

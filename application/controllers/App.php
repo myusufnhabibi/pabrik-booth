@@ -310,7 +310,13 @@ class app extends CI_Controller
                     $harga = str_replace('.', '', $this->input->post('harga'));
                     $ukuran = "P" . $this->input->post('panjang') . " X L" . $this->input->post('lebar') . " X T" . $this->input->post('tinggi');
                     $status = $this->input->post('status');
-                    $this->App_model->produk_tambah($id, $judul, $harga, $ukuran, $isi, $gambar, $status);
+                    $type = $this->input->post('type');
+                    if ($type == '1') {
+                        $nominal = $this->input->post('persen');
+                    } else if ($type == '2') {
+                        $nominal = str_replace('.', '', $this->input->post('nominal'));
+                    }
+                    $this->App_model->produk_tambah($id, $judul, $harga, $type, $nominal, $ukuran, $isi, $gambar, $status);
                     $callback = 'berhasil';
                     echo json_encode($callback);
                 }
@@ -360,6 +366,36 @@ class app extends CI_Controller
             $this->session->set_flashdata('berhasil', 'Produk Berhasil masuk draft');
         }
         redirect('app/produk');
+    }
+
+    public function set_publish($id)
+    {
+        $status = $this->uri->segment(4);
+        $key = $this->uri->segment(5);
+        $query = "SELECT * FROM pb_" . $key;
+        $query .= " WHERE status = '1'"; 
+        $cek = $this->db->query($query)->num_rows();
+
+        if ($key == 'gallery') {
+            $limit = 3;
+        } else if($key == 'testimoni') {
+            $limit = 5;
+        }
+
+        if (strval($status) == '0') {
+            if ($cek >= $limit) {
+                $this->session->set_flashdata('gagal', 'Gagal dipublish, Ketentuannya hanya bisa Publish ' . $key . ' Gambar');
+            } else {
+                $this->App_model->set_publish($id, '1', 'galery_id', 'pb_gallery');
+                $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil dipublish');
+               
+            }
+        } else {
+            $this->App_model->set_publish($id, '0', 'galery_id', 'pb_gallery');
+            $this->session->set_flashdata('berhasil', ucfirst($status) . ' Berhasiasasasl diunpublish');
+        }
+        
+        redirect('app/' . $key);
     }
 
     public function del_fk($id)

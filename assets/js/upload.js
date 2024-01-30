@@ -1,3 +1,10 @@
+$(document).ready(function() {
+	type = $('.utype').val()
+
+        $('.itype').val('0').trigger("change");
+        $('.utype').val(type).trigger('change');
+})
+
 (function ($) {
 	Dropzone.autoProcessQueue = false; //setting dropzone agar tidak ototmatis upload file
 	Dropzone.autoDiscover = false; //setting dropzone agar tidak ototmatis upload file
@@ -122,7 +129,7 @@
 		// $('#btnSubmit3').removeAttr('disabled')
 		nama = $('#nama').val()
 		harga = $('#harga').val()
-		// ukuran = $('#ukuran').val()
+		nominal = $('#nominal').val()
 		files = $('#image-upload')[0].files;
 		var ini = $('#simpanK');
 		ini.text('tunggu . . .').attr('disabled', 'disabled')
@@ -133,6 +140,10 @@
 			return false
 		} else if (harga == '') {
 			alert('Harga Harus diisi!')
+			ini.text('Simpan').removeAttr("disabled")
+			return false
+		} else if (harga == '') {
+			alert('Nominal Harus diisi Kalau ada Diskon!')
 			ini.text('Simpan').removeAttr("disabled")
 			return false
 		} else if (files.length < 1) {
@@ -166,6 +177,9 @@
 						alert('Produk berhasil Disimpan!')
 						$('#nama').prop("readonly", true);
 						$('#harga').prop("readonly", true);
+						$('#type').prop("readonly", true);
+						$('#nominal').prop("readonly", true);
+						$('#persen').prop("readonly", true);
 						$('#panjang').prop("readonly", true);
 						$('#lebar').prop("readonly", true);
 						$('#tinggi').prop("readonly", true);

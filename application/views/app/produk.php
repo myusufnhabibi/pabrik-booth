@@ -40,7 +40,16 @@
                                 <td>
                                     <img width="100" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail']) ?>" class="img-fluid" alt="">
                                 </td>
-                                <td><?php echo $produk['nama'] ?></td>
+                                <td>
+                                    <?php echo $produk['nama'] ?> <br>
+                                    <?php if ($produk['diskon'] == '0') { ?>
+                                         <span class="badge badge-danger">Tidak ada diskon</span>
+                                    <?php } else { 
+                                            $d = $produk['diskon'];
+                                            $nd = $produk['nominal_diskon']; ?>
+                                        <span class="badge badge-success">Diskon : <?= $d == '1' ? $nd . '%' : 'Rp.' . number_format($nd) ?> </span>
+                                    <?php } ?>
+                                </td>
                                 <td><?php echo "Rp. " .  number_format($produk['harga']) ?></td>
                                 <td><?php echo $produk['ukuran'] ?></td>
                                 <!-- <td><?php 
