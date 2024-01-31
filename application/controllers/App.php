@@ -14,63 +14,63 @@ class app extends CI_Controller
     public function beranda()
     {
         $data['title'] = "Beranda";
-        $data['qna'] = $this->App_model->get('tbl_qna')->num_rows();
+        $data['testimoni'] = $this->App_model->get('pb_testimoni')->num_rows();
         $data['gallery'] = $this->App_model->get('pb_gallery')->num_rows();
         $data['produk'] = $this->App_model->get('pb_produk')->num_rows();
         $this->template->load('template', 'app/beranda', $data);
     }
 
-    public function qna()
+    public function promo()
     {
-        $data['title'] = "QnA";
-        $data['qnas'] = $this->App_model->get('tbl_qna')->result_array();
-        $this->template->load('template', 'app/qna', $data);
+        $data['title'] = "Promo";
+        $data['promos'] = $this->App_model->get('pb_promo')->result_array();
+        $this->template->load('template', 'app/promo', $data);
     }
 
-    public function aqna()
+    public function apromo()
     {
         $param = $this->uri->segment(3);
         if ($param) {
-            $cek = $this->App_model->get('tbl_qna', $param, 'qna_id')->num_rows();
+            $cek = $this->App_model->get('pb_promo', $param, 'id')->num_rows();
             if ($cek > 0) {
-                $data['title'] = "Ubah QnA";
-                $data['qna'] = $this->App_model->get('tbl_qna', $param, 'qna_id')->row_array();
+                $data['title'] = "Ubah Promo";
+                $data['promo'] = $this->App_model->get('pb_promo', $param, 'id')->row_array();
             } else {
-                redirect('app/qna');
+                redirect('app/promo');
             }
         } else {
-            $data['title'] = "Tambah QnA";
+            $data['title'] = "Tambah Promo";
         }
-        $this->template->load('template', 'app/aqna', $data);
+        $this->template->load('template', 'app/apromo', $data);
     }
 
-    public function qna_tambah()
+    public function promo_tambah()
     {
         $post = $this->input->post(null, true);
-        $this->App_model->qna_tambah($post);
+        $this->App_model->promo_tambah($post);
         if ($this->db->affected_rows() == 1) {
-            $this->session->set_flashdata('berhasil', 'Data QnA Berhasil ditambahkan');
-            redirect('app/qna');
+            $this->session->set_flashdata('berhasil', 'Data Promo Berhasil ditambahkan');
+            redirect('app/promo');
         }
     }
 
-    public function qna_ubah()
+    public function promo_ubah()
     {
         $post = $this->input->post(null, true);
-        $this->App_model->qna_ubah($post);
+        $this->App_model->promo_ubah($post);
         if ($this->db->affected_rows() == 1) {
-            $this->session->set_flashdata('berhasil', 'Data QnA Berhasil diubah');
-            redirect('app/qna');
+            $this->session->set_flashdata('berhasil', 'Data Promo Berhasil diubah');
+            redirect('app/promo');
         }
     }
 
-    public function del_qna($id)
+    public function del_promo($id)
     {
         // $id = $this->uri->segment(4);
-        $this->db->where('qna_id', $id);
-        $this->db->delete('tbl_qna');
-        $this->session->set_flashdata('berhasil', 'Data QnA Berhasil dihapus');
-        redirect('app/qna');
+        $this->db->where('id', $id);
+        $this->db->delete('pb_promo');
+        $this->session->set_flashdata('berhasil', 'Data Promo Berhasil dihapus');
+        redirect('app/promo');
     }
 
     public function setting()
@@ -372,27 +372,31 @@ class app extends CI_Controller
     {
         $status = $this->uri->segment(4);
         $key = $this->uri->segment(5);
-        $query = "SELECT * FROM pb_" . $key;
-        $query .= " WHERE status = '1'"; 
-        $cek = $this->db->query($query)->num_rows();
 
         if ($key == 'gallery') {
             $limit = 3;
+            $primary_key = 'galery_id';
+            $tabel = 'pb_gallery';
         } else if($key == 'testimoni') {
             $limit = 5;
+            $primary_key = 'id';
+            $tabel = 'pb_testimoni';
         }
+
+        $query = "SELECT * FROM " . $tabel;
+        $query .= " WHERE status = '1'"; 
+        $cek = $this->db->query($query)->num_rows();
 
         if (strval($status) == '0') {
             if ($cek >= $limit) {
-                $this->session->set_flashdata('gagal', 'Gagal dipublish, Ketentuannya hanya bisa Publish ' . $key . ' Gambar');
+                $this->session->set_flashdata('gagal', 'Gagal dipublish, Ketentuannya hanya bisa Publish ' . $limit . ' Gambar');
             } else {
-                $this->App_model->set_publish($id, '1', 'galery_id', 'pb_gallery');
+                $this->App_model->set_publish($id, '1', $primary_key, $tabel);
                 $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil dipublish');
-               
             }
         } else {
-            $this->App_model->set_publish($id, '0', 'galery_id', 'pb_gallery');
-            $this->session->set_flashdata('berhasil', ucfirst($status) . ' Berhasiasasasl diunpublish');
+            $this->App_model->set_publish($id, '0', $primary_key, $tabel);
+            $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil diunpublish');
         }
         
         redirect('app/' . $key);

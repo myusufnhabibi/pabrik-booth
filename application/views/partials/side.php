@@ -28,11 +28,11 @@ $pg2 = $this->uri->segment(3); ?>
         Kelola Menu
     </div>
 
-    <!-- <li class="nav-item <?= $pg == 'qna' || $pg == 'aqna' ? 'active' : '' ?>">
-        <a class="nav-link" href="<?= base_url('app/qna') ?>">
+    <li class="nav-item <?= $pg == 'promo' || $pg == 'apromo' ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('app/promo') ?>">
             <i class="fas fa-fw fa-question-circle"></i>
-            <span>Data QnA</span></a>
-    </li> -->
+            <span>Data Promo</span></a>
+    </li>
 
     <li class="nav-item <?= $pg == 'gallery' ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('app/gallery') ?>">

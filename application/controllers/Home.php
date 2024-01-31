@@ -12,9 +12,9 @@ class home extends CI_Controller
 
     public function index()
     {
-        $data['gallerys'] = $this->Home_model->get('pb_gallery', null, null, null, null, null, '0', '4')->result_array();
-        $data['produks'] = $this->Home_model->get('pb_produk', null, null, null, null, null, '0', '8')->result_array();
-        $data['testimonis'] = $this->Home_model->get('pb_testimoni', null, null, null, null, null, '0', '4')->result_array();
+        $data['gallerys'] = $this->Home_model->get('pb_gallery', 1, 'status', null, null, null, '0', '4')->result_array();
+        $data['produks'] = $this->Home_model->get('pb_produk', 1, 'status', null, null, null, '0', '8')->result_array();
+        $data['testimonis'] = $this->Home_model->get('pb_testimoni', 1, 'status', null, null, null, '0', '4')->result_array();
         // $data['ketua'] = $this->Home_model->get_kontak('Ketua KLB')->row_array();
         // $data['jumlah_galery'] = $this->Home_model->get('tbl_galery')->num_rows();
         // $data['admin'] = $this->Home_model->get_kontak('Admin KLB')->row_array();

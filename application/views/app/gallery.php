@@ -2,7 +2,10 @@
     <h1 class="h3 mb-2 text-gray-800">Gallery</h1>
     <p class="mb-4">Gallery berisi gambar yang ada Web di Karya Logam Bersatu Indonesia</p>
     <!-- end row -->
-    <?php $this->view('message') ?>
+    
+    <?php 
+        $this->view('message');
+        ?>
     <div class="row">
         <div class="col-md-8">
             <div class="card shadow mb-4">

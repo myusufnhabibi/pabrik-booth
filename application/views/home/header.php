@@ -43,7 +43,7 @@
 					<div class="header-row justify-content-between">
 						<div class="header-logo z-index-2 col-lg-2 px-0">
 							<a href="demo-auto-services.html">
-								<img alt="Porto" width="123" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="<?= base_url('assets/gambar/' . $this->fungsi->setting_app()->logo) ?>">
+								<img alt="Porto" class="mt-4" width="200" height="100" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="<?= base_url('assets/gambar/' . $this->fungsi->setting_app()->logo) ?>">
 							</a>
 						</div>
 						<div class="header-nav header-nav-links justify-content-end pe-lg-4 me-lg-3">

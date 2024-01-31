@@ -47,21 +47,23 @@ class App_model extends CI_Model
     }
 
 
-    public function qna_tambah($post)
+    public function promo_tambah($post)
     {
         $param = [
-            'pertanyaan' => ucfirst($post['pertanyaan']),
-            'jawaban' => $post['jawaban']
+            'judul' => ucfirst($post['judul']),
+            'value' => $post['keterangan'],
+            'status' => $post['status'],
         ];
-        $this->db->insert('tbl_qna', $param);
+        $this->db->insert('pb_promo', $param);
     }
 
-    public function qna_ubah($post)
+    public function promo_ubah($post)
     {
-        $param['pertanyaan'] = ucfirst($post['pertanyaan']);
-        $param['jawaban'] = $post['jawaban'];
-        $this->db->where('qna_id', $post['id']);
-        $this->db->update('tbl_qna', $param);
+        $param['judul'] = ucfirst($post['judul']);
+        $param['value'] = $post['keterangan'];
+        $param['status'] = $post['status'];
+        $this->db->where('id', $post['id']);
+        $this->db->update('pb_promo', $param);
     }
 
     public function setting_ubah($post)

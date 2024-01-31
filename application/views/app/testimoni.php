@@ -36,6 +36,16 @@
                         <footer class="blockquote-footer text-white font-12">
                             Maksimal multipel upload 5 file
                         </footer>
+                        <footer class="blockquote-footer text-white">
+                            PUBLISH : Menampilkan gallery ke home (halaman awal web utama) 
+                        </footer>
+                        <footer class="blockquote-footer text-white">
+                            UNPUBLISH :  Tidak Menampilkan gallery ke home (halaman awal web utama) 
+                        </footer>
+                        <footer class="blockquote-footer text-white">
+                            Maksimal PUBLISH (hanya 4 gambar) !! <br>
+                            Note: Secara default gambar yang ada di gallery masuk di Katalog Gallery (Web Utama)
+                        </footer>
                     </blockquote>
                 </div>
             </div>
@@ -59,8 +69,13 @@
                                 <img class="card-img-top img-fluid" width="100" height="100" src="<?= base_url('assets/gambar/testimoni/' . $testimoni['testimoni']) ?>" alt="Card image cap">
                                 <div class="card-body">
                                     <!-- <span class="badge badge-danger ref">Hapus</span><br> -->
-                                    <a type="button" href="<?= base_url('app/del_testimoni/' . $testimoni['id']) ?>" onclick="return confirm('Yakin ingin menghapus?')" class="btn btn-danger m-t-5 waves-effect btn-block waves-light set_slider">Hapus</a>
+                                    <a type="button" href="<?= base_url('app/del_testimoni/' . $testimoni['id']) ?>" onclick="return confirm('Yakin ingin menghapus?')" class="btn btn-danger btn-sm m-t-5 waves-effect waves-light set_slider">Hapus</a>
                                     <!-- </div> -->
+                                    <?php if ($testimoni['status'] == '0') { ?>
+                                        <a href="<?= base_url('app/set_publish/' . $testimoni['id'] . '/' . $testimoni['status'] . '/' . 'testimoni') ?>" onclick="return confirm('Yakin ingin mempublish?')" class="btn btn-sm btn-info">Publish</a>
+                                    <?php } else { ?>
+                                        <a href="<?= base_url('app/set_publish/' . $testimoni['id'] . '/' . $testimoni['status'] . '/' . 'testimoni') ?>" class="btn btn-sm btn-warning">Un Publish</a>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div><!-- end col -->

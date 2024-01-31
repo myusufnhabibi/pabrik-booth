@@ -7,10 +7,10 @@
     <div class="row justify-content-md-center mb-4">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header font-16 mt-0">
+                <div class="card-header bg-primary font-16 mt-0">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h6 class="font-weight-bold text-primary"><?= $title ?></h6>
-                        <a href="<?= base_url('app/produk') ?>" class="btn btn-secondary btn-sm" style="float: right;">Kembali</a>
+                        <h6 class="font-weight-bold text-white"><?= $title ?></h6>
+                        <a href="<?= base_url('app/produk') ?>" class="btn btn-info btn-sm" style="float: right;">Kembali</a>
                     </div>
                 </div>
                 <div class="card-body">
