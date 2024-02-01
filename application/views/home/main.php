@@ -448,14 +448,18 @@
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="product mb-0">
                         <div class="product-thumb-info border-0 mb-3">
-                            <div class="product-thumb-info-badges-wrapper">
-                                <span class="badge badge-ecommerce text-bg-danger">27% OFF</span>
-                            </div>
-                            <div class="addtocart-btn-wrapper">
-                                <a href="shop-cart.html" class="text-decoration-none addtocart-btn" title="Add to Cart">
-                                    <i class="icons icon-bag"></i>
-                                </a>
-                            </div>
+                            <?php if($produk['diskon'] != '0') { ?>
+                                <div class="product-thumb-info-badges-wrapper">
+                                    <span class="badge badge-ecommerce text-bg-danger">
+                                        <?php if ($produk['diskon'] == '1') {
+                                            echo 'Diskon : ' . $produk['nominal_diskon'] . '%';
+                                        } else {
+                                            echo 'Diskon : ' . round($produk['nominal_diskon'] / $produk['harga'] * 100) . '%';
+                                        }
+                                        ?>
+                                    </span>
+                                </div>
+                            <?php } ?>
                             <a href="<?= base_url('home/produk_modal/' . $produk['produk_id']) ?>" class="quick-view text-uppercase font-weight-semibold text-2">
                                 LIHAT DETAIL
                             </a>
@@ -475,8 +479,20 @@
                             <input type="text" class="d-none" value="5" title="" data-plugin-star-rating data-plugin-options="{'displayOnly': true, 'color': 'default', 'size':'xs'}">
                         </div>
                         <p class="price text-5 mb-3">
-                            <span class="sale text-color-dark font-weight-medium">49,00</span>
-                            <span class="amount"><?= 'Rp. ' . number_format($produk['harga']) ?></span>
+                            
+                            <?php if($produk['diskon'] != '0') { ?>
+                                <span class="sale text-color-dark font-weight-medium">
+                                    <?php if ($produk['diskon'] == '1') {
+                                        echo 'Rp. ' . number_format($produk['harga'] - ($produk['nominal_diskon']/100 * $produk['harga']));
+                                    } else {
+                                        echo 'Rp. '. number_format((int)$produk['harga'] - (int)$produk['nominal_diskon']);
+                                    }
+                                    ?>
+                                </span>
+                                <span class="amount"><?= 'Rp. ' . number_format($produk['harga']) ?></span>
+                            <?php } else { ?>
+                                <span class="sale text-color-dark font-weight-medium"><?= 'Rp. ' . number_format($produk['harga']) ?></span>
+                            <?php } ?>
                         </p>
                     </div>
                 </div>
