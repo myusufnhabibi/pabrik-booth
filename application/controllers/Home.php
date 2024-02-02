@@ -15,9 +15,8 @@ class home extends CI_Controller
         $data['gallerys'] = $this->Home_model->get('pb_gallery', '1', 'status', null, null, null, '0', '4')->result_array();
         $data['produks'] = $this->Home_model->get('pb_produk', '1', 'status', null, null, null, '0', '8')->result_array();
         $data['testimonis'] = $this->Home_model->get('pb_testimoni', '1', 'status', null, null, null, '0', '4')->result_array();
-        // $data['ketua'] = $this->Home_model->get_kontak('Ketua KLB')->row_array();
-        // $data['jumlah_galery'] = $this->Home_model->get('tbl_galery')->num_rows();
-        // $data['admin'] = $this->Home_model->get_kontak('Admin KLB')->row_array();
+        $data['promo'] = $this->Home_model->get('pb_promo', '1', 'status')->row_array();
+        $data['cek'] = $this->Home_model->get('pb_promo', '1', 'status')->num_rows();
         // $data['kontaks'] = $this->Home_model->get('tbl_kontak')->result_array();
 	    // $data['kegiatan_utama_cek'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '0', '1')->num_rows();
 	    // $data['kegiatan_lanjutan_cek'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '1', '3')->num_rows();

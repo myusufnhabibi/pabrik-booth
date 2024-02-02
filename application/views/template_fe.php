@@ -68,7 +68,7 @@
 </head>
 
 <body>
-
+	<script src="<?= base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
 	<div class="body">
 		<div class="notice-top-bar bg-primary" data-sticky-start-at="100">
 			<button class="hamburguer-btn hamburguer-btn-light notice-top-bar-close m-0 active" data-set-active="false">
@@ -85,15 +85,28 @@
 				</div>
 			</div>
 		</div>
+		<?php 
+			$nomer = $this->fungsi->setting_app()->nomer;
+			function set_wa($param) {
+				$nomer = $this->fungsi->setting_app()->nomer;
+				$promo = $promo['judul'];
+				if ($param == 'biasa') {
+					$wa = 'https://wa.me/' .$nomer;
+				} else if ($param == 'promo') {
+					$wa = 'https://wa.me/' .$nomer . '?text=Saya Mau Pesan dengan' . $promo;
+				}
 
+				return $wa;
+			}
+		?>
 		<!-- Header -->
 		<?php include "home/header.php" ?>
 		<!-- End of Header -->
 
 
-		<!-- Header -->
-		<?php include "home/main.php" ?>
-		<!-- End of Header -->
+		<!-- Main -->
+		<?= $contents; ?>
+		<!-- End of Main -->
 
 		<!-- footer -->
 		<?php include "home/footer.php" ?>
