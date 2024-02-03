@@ -6,7 +6,7 @@
 				<div class="header-column w-100">
 					<div class="header-row justify-content-between">
 						<div class="header-logo z-index-2 col-lg-2 px-0">
-							<a href="<?= base_url('home') ?>">
+							<a href="<?= base_url('beranda') ?>">
 								<img alt="Porto" class="mt-4" width="200" height="100" data-sticky-width="82" data-sticky-height="40" data-sticky-top="84" src="<?= base_url('assets/gambar/' . $this->fungsi->setting_app()->logo) ?>">
 							</a>
 						</div>
@@ -14,11 +14,11 @@
 							<div class="header-nav-main header-nav-main-arrows header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
 								<nav class="collapse">
 									<ul class="nav nav-pills" id="mainNav">
-										<li><a href="<?= base_url('home') ?>" class="nav-link active">Beranda</a></li>
-										<li><a href="<?= base_url('home/tentang_kami') ?>" class="nav-link">Tentang Kami</a></li>
+										<li><a href="<?= base_url('beranda') ?>" class="nav-link active">Beranda</a></li>
+										<li><a href="<?= base_url('tentang-kami') ?>" class="nav-link">Tentang Kami</a></li>
 										<li><a href="demo-auto-services-products.html" class="nav-link">Produk</a></li>
-										<li><a href="demo-auto-services-blog.html" class="nav-link">Cara Order</a></li>
-										<li><a href="demo-auto-services-appointment.html" class="nav-link">Kontak</a></li>
+										<li><a href="<?= base_url('cara-order') ?>" class="nav-link">Cara Order</a></li>
+										<li><a href="<?= base_url('kontak') ?>" class="nav-link">Kontak</a></li>
 									</ul>
 								</nav>
 							</div>

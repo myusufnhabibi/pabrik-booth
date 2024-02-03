@@ -39,23 +39,20 @@ class home extends CI_Controller
         $this->template->load('template_fe', 'home/tentang', $data);
     }
 
-    public function kegiatan_semua()
+    public function produk()
     {
         $data['kegiatans'] = $this->Home_model->get('tbl_kegiatan', '1', 'status')->result_array();
         $this->template->load('template_fe', 'home/kegiatan', $data);
     }
 
-    public function katalog()
+    public function cara_order( )
     {
-        $this->template->load('template_fe', 'home/katalog');
+        $this->template->load('template_fe', 'home/cara_order');
     }
 
-    public function kegiatan($id)
+    public function kontak( )
     {
-        $data['kegiatan_detail'] = $this->Home_model->get('tbl_kegiatan', $id, 'url')->row_array();
-        $data['kegiatan_foto'] = $this->Home_model->get('tbl_foto_kegiatan', $data['kegiatan_detail']['kegiatan_id'], 'kegiatan_id')->result_array();
-        $data['cek'] = $this->Home_model->get('tbl_foto_kegiatan', $data['kegiatan_detail']['kegiatan_id'], 'kegiatan_id')->num_rows();
-        $this->template->load('template_fe', 'home/kegiatan_detail', $data);
+        $this->template->load('template_fe', 'home/kontak');
     }
 
     public function error_404()

@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-4 order-1 order-md-2 align-self-center">
                     <ul class="breadcrumb d-flex justify-content-md-end text-3-5">
-                        <li><a href="demo-auto-services.html" class="text-color-default text-color-hover-primary text-decoration-none">BERANDA</a></li>
+                        <li><a href="<?= base_url('beranda') ?>" class="text-color-default text-color-hover-primary text-decoration-none">BERANDA</a></li>
                         <li class="active">TENTANG KAMI</li>
                     </ul>
                 </div>
