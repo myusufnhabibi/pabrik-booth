@@ -45,6 +45,13 @@ class home extends CI_Controller
         $this->template->load('template_fe', 'home/kegiatan', $data);
     }
 
+    public function kontak_tambah()
+    {
+        $post = $this->input->post(null, true);
+        $this->Home_model->kontak_tambah($post);
+        echo "success";
+    }
+
     public function cara_order( )
     {
         $this->template->load('template_fe', 'home/cara_order');

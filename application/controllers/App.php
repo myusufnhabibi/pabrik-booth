@@ -17,6 +17,9 @@ class app extends CI_Controller
         $data['testimoni'] = $this->App_model->get('pb_testimoni')->num_rows();
         $data['gallery'] = $this->App_model->get('pb_gallery')->num_rows();
         $data['produk'] = $this->App_model->get('pb_produk')->num_rows();
+        $data['promo'] = $this->App_model->get('pb_promo', '1', 'status')->row_array();
+        $data['cek_promo'] = $this->App_model->get('pb_promo', '1', 'status')->num_rows();
+        $data['pesan'] = $this->App_model->get('pb_kontak')->num_rows();
         $this->template->load('template', 'app/beranda', $data);
     }
 
@@ -71,6 +74,13 @@ class app extends CI_Controller
         $this->db->delete('pb_promo');
         $this->session->set_flashdata('berhasil', 'Data Promo Berhasil dihapus');
         redirect('app/promo');
+    }
+
+    public function pesan()
+    {
+        $data['title'] = "Pesan";
+        $data['pesans'] = $this->App_model->get('pb_kontak')->result_array();
+        $this->template->load('template', 'app/pesan', $data);
     }
 
     public function setting()

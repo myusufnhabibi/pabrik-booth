@@ -30,7 +30,7 @@ $pg2 = $this->uri->segment(3); ?>
 
     <li class="nav-item <?= $pg == 'promo' || $pg == 'apromo' ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('app/promo') ?>">
-            <i class="fas fa-fw fa-question-circle"></i>
+            <i class="fas fa-fw fa-tag"></i>
             <span>Data Promo</span></a>
     </li>
 
@@ -42,19 +42,25 @@ $pg2 = $this->uri->segment(3); ?>
 
     <li class="nav-item <?= $pg == 'testimoni' ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('app/testimoni') ?>">
-            <i class="fas fa-fw fa-images"></i>
+            <i class="fas fa-fw fa-users"></i>
             <span>Data Testimoni</span></a>
+    </li>
+
+    <li class="nav-item <?= $pg == 'pesan' ? 'active' : '' ?>">
+        <a class="nav-link" href="<?= base_url('app/pesan') ?>">
+            <i class="fas fa-fw fa-comment"></i>
+            <span>Data Pesan</span></a>
     </li>
 
     <li class="nav-item <?= ($pg == 'produk' || $pg == 'aproduk' || $pg == 'eproduk' || $pg == 'dproduk' ? 'active' : '') ?>">
         <a class="nav-link" href="<?= base_url('app/produk') ?>">
-            <i class="fas fa-fw fa-people-carry"></i>
+            <i class="fas fa-fw fa-dumpster-fire"></i>
             <span>Data Produk</span></a>
     </li>
 
     <li class="nav-item <?= $pg == 'setting' || $pg == 'asetting' ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('app/setting') ?>">
-            <i class="fas fa-fw fa-address-book"></i>
+            <i class="fas fa-fw fa-bars"></i>
             <span>Setting App</span></a>
     </li>
 

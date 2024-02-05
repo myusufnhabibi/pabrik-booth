@@ -28,4 +28,15 @@ class Home_model extends CI_Model
 		$this->db->where('status','1');
 	    return $this->db->order_by('tgl_buat', 'desc')->get('tbl_kegiatan')->result_array();
 	}
+
+    public function kontak_tambah($post)
+    {   
+        $param = [
+            'nama' => ucfirst($post['nama']),
+            'nomer' => $post['nomer'],
+            'pesan' => $post['pesan'],
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+        $this->db->insert('pb_kontak', $param);
+    }
 }

@@ -1,8 +1,7 @@
 <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Testimoni</h1>
     <p class="mb-4">Testimoni berisi gambar yang ada Web di <?= $this->fungsi->setting_app()->nama ?></p>
-    <!-- end row -->
-    <?php $this->view('message') ?>
+
     <div class="row">
         <div class="col-md-8">
             <div class="card shadow mb-4">

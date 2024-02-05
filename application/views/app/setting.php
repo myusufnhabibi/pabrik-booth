@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800">Setting App</h1>
-    <p class="mb-4">Setting App yang ada Web di Pabrik Booth Container</p>
+    <p class="mb-4">Setting App yang ada Web di <?= $this->fungsi->setting_app()->nama ?></p>
 
     <?php $this->view('message') ?>
     <div class="row justify-content-md-center">

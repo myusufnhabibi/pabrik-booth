@@ -26,6 +26,20 @@
         </div>
     </div>
     <!-- Content Row -->
+    <?php if($cek_promo > 0) {?>
+        <div class="row">
+            <div class="col-6">
+                <div class="alert alert-warning">
+                    <i class="fa fa-info-circle"></i>
+                    <b>Ada Promo Aktif!!</b> <br> <?= $promo['judul'] ?>
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    
     <div class="row">
 
         <!-- Earnings (Monthly) Card Example -->
@@ -58,7 +72,7 @@
                             <div class="text-sm text-black mt-2">Info Lebih lanjut <a href="<?= base_url('app/testimoni') ?>" class="ml-2 badge badge-info">klik </a></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-user-tie fa-2x text-gray-300"></i>
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -76,7 +90,25 @@
                             <div class="text-sm text-black mt-2">Info Lebih lanjut <a href="<?= base_url('app/produk') ?>" class="ml-2 badge badge-info">klik </a></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-user-tie fa-2x text-gray-300"></i>
+                            <i class="fas fa-dumpster-fire fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-sm font-weight-bold text-danger text-uppercase mb-1">
+                                Pesan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $pesan; ?></div>
+                            <div class="text-sm text-black mt-2">Info Lebih lanjut <a href="<?= base_url('app/pesan') ?>" class="ml-2 badge badge-danger">klik </a></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comment fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
