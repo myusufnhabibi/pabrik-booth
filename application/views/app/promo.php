@@ -3,9 +3,22 @@
     <p class="mb-4">Data Pertanyaan dan jawaban yang ada Web di Karya Logam Bersatu Indonesia</p>
 
     <?php $this->view('message') ?>
+    <div class="row">
+        <div class="col-6">
+            <div class="card shadow mb-3 text-white bg-info">
+                <div class="card-body">
+                    <blockquote class="card-blockquote mb-0">
+                        <p><b>Info Maseh!</b></p>
+                        <p>Status Masih Berlaku hanya bisa digunakan pada 1 Promo, Ketika ada penambahan promo baru status promo yang lama akan berubah ke status tidak berlaku!!</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Promo</h6>
+        <div class="card-header bg-primary py-3">
+            <h6 class="m-0 font-weight-bold text-white">Data Promo</h6>
         </div>
         <div class="card-body">
             <div class="row mb-3">

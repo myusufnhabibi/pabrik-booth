@@ -17,6 +17,14 @@
                             <input type="text" class="form-control" value="<?= $setting['nama'] ?>" name="nama" id="nama">    
                         </div>
                         <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" value="<?= $setting['email'] ?>" name="email" id="email">    
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat</label>
+                           <textarea name="alamat" class="form-control" id="alamat" cols="30" rows="5"><?= $setting['alamat'] ?></textarea>  
+                        </div>
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">Logo Lama</label> <br>

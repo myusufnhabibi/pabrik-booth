@@ -80,23 +80,6 @@ class app extends CI_Controller
         $this->template->load('template', 'app/setting', $data);
     }
 
-    public function asetting()
-    {
-        $param = $this->uri->segment(3);
-        if ($param) {
-            $cek = $this->App_model->get('pb_setting', $param, 'setting_id')->num_rows();
-            if ($cek > 0) {
-                $data['title'] = "Ubah setting";
-                $data['setting'] = $this->App_model->get('pb_setting', $param, 'setting_id')->row_array();
-            } else {
-                redirect('app/setting');
-            }
-        } else {
-            $data['title'] = "Tambah setting";
-        }
-        $this->template->load('template', 'app/asetting', $data);
-    }
-
     public function setting_ubah()
     {
         $post = $this->input->post(null, true);

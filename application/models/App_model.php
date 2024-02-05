@@ -49,6 +49,15 @@ class App_model extends CI_Model
 
     public function promo_tambah($post)
     {
+        $cek = $this->db->query("SELECT id from pb_promo WHERE status = '1'")->num_rows();
+        $data = $this->db->query("SELECT id from pb_promo WHERE status = '1'")->row_array();
+        if ($post['status'] == '1') {
+            if ($cek > 0) {
+                $this->db->where('id', $data['id']);
+                $this->db->update('pb_promo', ['status' => '0']);
+            }
+        }
+        
         $param = [
             'judul' => ucfirst($post['judul']),
             'value' => $post['keterangan'],
@@ -59,6 +68,15 @@ class App_model extends CI_Model
 
     public function promo_ubah($post)
     {
+        $cek = $this->db->query("SELECT id from pb_promo WHERE status = '1'")->num_rows();
+        $data = $this->db->query("SELECT id from pb_promo WHERE status = '1'")->row_array();
+        if ($post['status'] == '1') {
+            if ($cek > 0) {
+                $this->db->where('id', $data['id']);
+                $this->db->update('pb_promo', ['status' => '0']);
+            }
+        }
+        
         $param['judul'] = ucfirst($post['judul']);
         $param['value'] = $post['keterangan'];
         $param['status'] = $post['status'];
@@ -70,6 +88,8 @@ class App_model extends CI_Model
     {
         $param = [
             'nama' => $post['nama'],
+            'email' => $post['email'],
+            'alamat' => $post['alamat'],
             'nomer' => $post['nomer'],
             'fb' => $post['fb'],
             'ig' => $post['ig'],
