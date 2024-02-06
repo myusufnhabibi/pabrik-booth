@@ -370,26 +370,37 @@ class app extends CI_Controller
             $limit = 3;
             $primary_key = 'galery_id';
             $tabel = 'pb_gallery';
+            $kolom = 'status';
         } else if($key == 'testimoni') {
             $limit = 5;
             $primary_key = 'id';
             $tabel = 'pb_testimoni';
+            $kolom = 'status';
+        } else if($key == 'terlaris') {
+            $limit = 4;
+            $primary_key = 'produk_id';
+            $tabel = 'pb_produk';
+            $kolom = 'terlaris';
         }
 
         $query = "SELECT * FROM " . $tabel;
-        $query .= " WHERE status = '1'"; 
+        $query .= " WHERE " . $kolom . " = '1'"; 
         $cek = $this->db->query($query)->num_rows();
 
         if (strval($status) == '0') {
             if ($cek >= $limit) {
-                $this->session->set_flashdata('gagal', 'Gagal dipublish, Ketentuannya hanya bisa Publish ' . $limit . ' Gambar');
+                $this->session->set_flashdata('gagal', 'Gagal diset, Ketentuannya hanya bisa Set ' . $limit . ' Gambar');
             } else {
-                $this->App_model->set_publish($id, '1', $primary_key, $tabel);
-                $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil dipublish');
+                $this->App_model->set_publish($id, '1', $primary_key, $tabel, $kolom);
+                $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil diset');
             }
         } else {
-            $this->App_model->set_publish($id, '0', $primary_key, $tabel);
-            $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil diunpublish');
+            $this->App_model->set_publish($id, '0', $primary_key, $tabel, $kolom);
+            $this->session->set_flashdata('berhasil', ucfirst($key) . ' Berhasil diunset');
+        }
+
+        if ($key == 'terlaris') {
+            $key = 'produk';
         }
         
         redirect('app/' . $key);

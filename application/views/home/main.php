@@ -315,25 +315,29 @@
 
     <section class="section bg-transparent position-relative border-0 z-index-1 m-0 p-0">
         <div class="container py-4">
-            <div class="row align-items-center text-center py-5">
-                <div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-                    <img src="img/logos/logo-8.png" alt class="img-fluid" style="max-width: 90px;" />
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8 text-center">
+                    <div class="overflow-hidden">
+                        <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Produk Terlaris</h2>
+                    </div>
+                    <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
+                        <hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600">
+                    </div>
                 </div>
-                <div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-                    <img src="img/logos/logo-9.png" alt class="img-fluid" style="max-width: 140px;" />
-                </div>
-                <div class="col-sm-4 col-lg-2 mb-5 mb-lg-0">
-                    <img src="img/logos/logo-10.png" alt class="img-fluid" style="max-width: 140px;" />
-                </div>
-                <div class="col-sm-4 col-lg-2 mb-5 mb-sm-0">
-                    <img src="img/logos/logo-11.png" alt class="img-fluid" style="max-width: 140px;" />
-                </div>
-                <div class="col-sm-4 col-lg-2 mb-5 mb-sm-0">
-                    <img src="img/logos/logo-12.png" alt class="img-fluid" style="max-width: 100px;" />
-                </div>
-                <div class="col-sm-4 col-lg-2">
-                    <img src="img/logos/logo-13.png" alt class="img-fluid" style="max-width: 100px;" />
-                </div>
+            </div>
+            <div class="row row-gutter-sm mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+                <?php foreach($terlaris as $tr) : ?>
+                    <div class="col-sm-6 col-lg-3 text-center mb-4 mb-lg-0">
+                        <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                            <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
+                                <div class="thumb-info-wrapper">
+                                    <img src="<?= base_url('assets/gambar/thumbnail/' . $tr['thumbnail']) ?>" class="img-fluid" alt="">
+                                </div>
+                                <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0"><?= $tr['nama'] ?></h3>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <svg class="custom-svg-3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 193 495">

@@ -200,9 +200,12 @@ class App_model extends CI_Model
         $this->db->update('pb_produk', $param);
     }
 
-    public function set_publish($id, $status, $primary, $tabel)
+    public function set_publish($id, $status, $primary, $tabel, $kolom)
     {
-        $param['status'] = $status;
+        $param = [
+            $kolom => $status
+        ];
+        // $param['status'] = $status;
         $this->db->where($primary, $id);
         $this->db->update($tabel, $param);
     }

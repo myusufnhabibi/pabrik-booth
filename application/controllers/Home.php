@@ -15,13 +15,9 @@ class home extends CI_Controller
         $data['gallerys'] = $this->Home_model->get('pb_gallery', '1', 'status', null, null, null, '0', '4')->result_array();
         $data['produks'] = $this->Home_model->get('pb_produk', '1', 'status', null, null, null, '0', '8')->result_array();
         $data['testimonis'] = $this->Home_model->get('pb_testimoni', '1', 'status', null, null, null, '0', '4')->result_array();
+        $data['terlaris'] = $this->Home_model->get('pb_produk', '1', 'terlaris', null, null, null, '0', '4')->result_array();
         $data['promo'] = $this->Home_model->get('pb_promo', '1', 'status')->row_array();
         $data['cek'] = $this->Home_model->get('pb_promo', '1', 'status')->num_rows();
-        // $data['kontaks'] = $this->Home_model->get('tbl_kontak')->result_array();
-	    // $data['kegiatan_utama_cek'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '0', '1')->num_rows();
-	    // $data['kegiatan_lanjutan_cek'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '1', '3')->num_rows();
-        // $data['kegiatan_utama'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '0', '1')->row_array();
-        // $data['kegiatan_lanjutan'] = $this->Home_model->get('tbl_kegiatan', '1', 'status', null, null, 'tgl_buat', '1', '3')->result_array();
         $this->template->load('template_fe', 'home/main', $data);
     }
 
@@ -39,12 +35,6 @@ class home extends CI_Controller
         $this->template->load('template_fe', 'home/tentang', $data);
     }
 
-    public function produk()
-    {
-        $data['kegiatans'] = $this->Home_model->get('tbl_kegiatan', '1', 'status')->result_array();
-        $this->template->load('template_fe', 'home/kegiatan', $data);
-    }
-
     public function kontak_tambah()
     {
         $post = $this->input->post(null, true);
@@ -60,6 +50,11 @@ class home extends CI_Controller
     public function kontak( )
     {
         $this->template->load('template_fe', 'home/kontak');
+    }
+
+    public function produk() {
+        $data['produks'] = $this->Home_model->get('pb_produk')->result_array();
+        $this->template->load('template_fe', 'home/produk', $data);
     }
 
     public function error_404()

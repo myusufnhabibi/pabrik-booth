@@ -49,6 +49,11 @@
                                             $nd = $produk['nominal_diskon']; ?>
                                         <span class="badge badge-success">Diskon : <?= $d == '1' ? $nd . '%' : 'Rp.' . number_format($nd) ?> </span>
                                     <?php } ?>
+                                    <?php if ($produk['terlaris'] == '0') { ?>
+                                        <a href="<?= base_url('app/set_publish/' . $produk['produk_id'] . '/' . $produk['terlaris'] . '/' . 'terlaris') ?>"><span class="badge badge-danger">Tidak Terlaris</span></a>
+                                    <?php } else { ?>
+                                        <a href="<?= base_url('app/set_publish/' . $produk['produk_id'] . '/' . $produk['terlaris'] . '/' . 'terlaris') ?>" ><span class="badge badge-success">Terlaris</span></a>
+                                    <?php } ?>
                                 </td>
                                 <td><?php echo "Rp. " .  number_format($produk['harga']) ?></td>
                                 <td><?php echo $produk['ukuran'] ?></td>

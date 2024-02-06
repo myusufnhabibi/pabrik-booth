@@ -16,7 +16,7 @@
 									<ul class="nav nav-pills" id="mainNav">
 										<li><a href="<?= base_url('beranda') ?>" class="nav-link active">Beranda</a></li>
 										<li><a href="<?= base_url('tentang-kami') ?>" class="nav-link">Tentang Kami</a></li>
-										<li><a href="demo-auto-services-products.html" class="nav-link">Produk</a></li>
+										<li><a href="<?= base_url('produk') ?>" class="nav-link">Produk</a></li>
 										<li><a href="<?= base_url('cara-order') ?>" class="nav-link">Cara Order</a></li>
 										<li><a href="<?= base_url('kontak') ?>" class="nav-link">Kontak</a></li>
 									</ul>
