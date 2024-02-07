@@ -14,9 +14,11 @@
 							<div class="header-nav-main header-nav-main-arrows header-nav-main-dropdown-no-borders header-nav-main-effect-3 header-nav-main-sub-effect-1">
 								<nav class="collapse">
 									<ul class="nav nav-pills" id="mainNav">
-										<li><a href="<?= base_url('beranda') ?>" class="nav-link active">Beranda</a></li>
+										
+										<li><a href="<?= base_url('beranda') ?>" class="nav-link active">Beranda <?php $url = $this->uri->segment(3); echo $url ?></a></li>
 										<li><a href="<?= base_url('tentang-kami') ?>" class="nav-link">Tentang Kami</a></li>
 										<li><a href="<?= base_url('produk') ?>" class="nav-link">Produk</a></li>
+										<li><a href="<?= base_url('gallery') ?>" class="nav-link">Gallery</a></li>
 										<li><a href="<?= base_url('cara-order') ?>" class="nav-link">Cara Order</a></li>
 										<li><a href="<?= base_url('kontak') ?>" class="nav-link">Kontak</a></li>
 									</ul>

@@ -55,6 +55,7 @@ $route['tentang-kami'] = 'home/tentang_kami';
 $route['beranda'] = 'home/index';
 $route['kontak'] = 'home/kontak';
 $route['produk'] = 'home/produk';
+$route['gallery'] = 'home/gallery';
 $route['sitemap\.xml'] = 'sitemap/index';
 $route['404_override'] = 'home/error_404';
 $route['translate_uri_dashes'] = FALSE;

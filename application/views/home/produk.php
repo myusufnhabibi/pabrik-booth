@@ -38,7 +38,12 @@
                             </a>
                             <a href="shop-product-sidebar-left.html">
                                 <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid rounded" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail'])?>">
+                                    <style>
+                                        .setterlaris {
+                                            height : 320px !important;
+                                        }
+                                    </style>
+                                    <img alt="" class="img-fluid rounded setterlaris" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail'])?>">
                                 </div>
                             </a>
                         </div>
@@ -72,4 +77,38 @@
                 <?php endforeach; ?>
         </div>
     </div>
+
+    <!-- Terlaris -->
+    <section class="section bg-transparent position-relative border-0 z-index-1 m-0 p-0">
+        <div class="container py-4">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-9 col-xl-8 text-center">
+                    <div class="overflow-hidden">
+                        <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Produk Terlaris</h2>
+                    </div>
+                    <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
+                        <hr class="my-0 appear-animation" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-gutter-sm mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+                <?php foreach($produks as $tr) : ?>
+                    <div class="col-sm-6 col-lg-3 text-center mb-4 mb-lg-0">
+                        <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                            <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
+                                <div class="thumb-info-wrapper">
+                                    <img src="<?= base_url('assets/gambar/thumbnail/' . $tr['thumbnail']) ?>" class="img-fluid setterlaris" alt="">
+                                </div>
+                                <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0"><?= $tr['nama'] ?></h3>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <svg class="custom-svg-3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 193 495">
+            <path fill="#1C5FA8" d="M193,25.73L18.95,247.93c-13.62,17.39-10.57,42.54,6.82,56.16L193,435.09V25.73z" />
+            <path fill="none" stroke="#FFF" stroke-width="1.5" stroke-miterlimit="10" d="M196,53.54L22.68,297.08c-12.81,18-8.6,42.98,9.4,55.79L196,469.53V53.54z" />
+        </svg>
+    </section>
 </div>

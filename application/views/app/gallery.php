@@ -65,7 +65,7 @@
                     foreach ($gallerys as $gallery) { ?>
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <!-- Simple card -->
-                            <div class="card m-b-30">
+                            <div class="card mb-3">
                                 <img class="card-img-top img-fluid" width="100" height="100" src="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>" alt="Card image cap">
                                 <div class="card-body">
                                     <!-- <span class="badge badge-danger ref">Hapus</span><br> -->

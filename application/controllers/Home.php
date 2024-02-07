@@ -57,6 +57,11 @@ class home extends CI_Controller
         $this->template->load('template_fe', 'home/produk', $data);
     }
 
+    public function gallery() {
+        $data['gallerys'] = $this->Home_model->get('pb_gallery')->result_array();
+        $this->template->load('template_fe', 'home/gallery', $data);
+    }
+
     public function error_404()
     {
         $this->output->set_status_header('404');

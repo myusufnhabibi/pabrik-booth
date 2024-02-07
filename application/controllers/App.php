@@ -367,7 +367,7 @@ class app extends CI_Controller
         $key = $this->uri->segment(5);
 
         if ($key == 'gallery') {
-            $limit = 3;
+            $limit = 4;
             $primary_key = 'galery_id';
             $tabel = 'pb_gallery';
             $kolom = 'status';

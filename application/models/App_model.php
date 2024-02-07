@@ -212,14 +212,30 @@ class App_model extends CI_Model
 
     private function uploadImage($param, $lokasi)
     {
-        $config['upload_path'] = realpath(FCPATH . $lokasi);
+        $directory = realpath(FCPATH . $lokasi);
+        $config['upload_path'] = $directory;
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size']     = '1048';
         $config['file_name']  = round(microtime(true) * 1000);
 
         $this->load->library('upload', $config);
         if ($this->upload->do_upload($param)) {
-            return $this->upload->data('file_name');
+            $data = array('upload_data' => $this->upload->data());
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = $directory . '/' . $data['upload_data']['file_name']; 
+            $config['create_thumb'] = FALSE;
+            $config['maintain_ratio'] = FALSE;
+            // $config['quality'] = '60%';
+            // $config['width'] = 280;
+            // $config["height"] = 320;
+            $config['new_image'] = $directory . '/' . $data['upload_data']['file_name']; 
+            $this->load->library('image_lib', $config); 
+            $this->image_lib->resize();
+
+            $image = $data['upload_data']['file_name'];
+
+            // return $this->upload->data('file_name');
+            return $image;
         } else {
             echo $this->upload->display_errors();
         }

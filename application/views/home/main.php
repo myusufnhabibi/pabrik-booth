@@ -197,7 +197,13 @@
                 <?php foreach($gallerys as $gallery) : ?>
                     <div class="col-6 col-md-3 px-0">
                         <a class="d-inline-block custom-img-thumbnail-style-1 img-thumbnail img-thumbnail-no-borders img-thumbnail-hover-icon rounded-0" href="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>">
-                            <img class="img-fluid rounded-0" src="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>" alt="" />
+                            <style>
+                                .setukur{
+                                    height : 450px !important;
+                                    object-fit: cover !important
+                                }
+                            </style>
+                            <img class="img-fluid rounded-0 setukur" src="<?= base_url('assets/gambar/gallery/' . $gallery['foto']) ?>" alt="" />
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -241,7 +247,12 @@
                             </a>
                             <a href="shop-product-sidebar-left.html">
                                 <div class="product-thumb-info-image bg-light">
-                                    <img alt="" class="img-fluid rounded" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail'])?>">
+                                    <style>
+                                        .setukuran {
+                                            height : 320px !important;
+                                        }
+                                    </style>
+                                    <img alt="" class="img-fluid rounded setukuran" src="<?= base_url('assets/gambar/thumbnail/' . $produk['thumbnail'])?>">
                                 </div>
                             </a>
                         </div>
@@ -276,7 +287,7 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <a href="demo-auto-services-products.html" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">LIHAT SEMUA PRODUK</a>
+                    <a href="<?= base_url('produk') ?>" class="btn btn-primary custom-btn-border-radius font-weight-bold text-3 btn-px-5 btn-py-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">LIHAT SEMUA PRODUK</a>
                 </div>
             </div>
         </div>
@@ -313,9 +324,10 @@
         </div>
     </section>
 
+    <!-- Terlaris -->
     <section class="section bg-transparent position-relative border-0 z-index-1 m-0 p-0">
         <div class="container py-4">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-5">
                 <div class="col-lg-9 col-xl-8 text-center">
                     <div class="overflow-hidden">
                         <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Produk Terlaris</h2>
@@ -331,7 +343,12 @@
                         <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
                             <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
                                 <div class="thumb-info-wrapper">
-                                    <img src="<?= base_url('assets/gambar/thumbnail/' . $tr['thumbnail']) ?>" class="img-fluid" alt="">
+                                    <style>
+                                        .setterlaris {
+                                            height : 320px !important;
+                                        }
+                                    </style>
+                                    <img src="<?= base_url('assets/gambar/thumbnail/' . $tr['thumbnail']) ?>" class="img-fluid setterlaris" alt="">
                                 </div>
                                 <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0"><?= $tr['nama'] ?></h3>
                             </div>
